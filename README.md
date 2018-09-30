@@ -38,8 +38,7 @@
  ---------------------------
 
  ### Database Schema
- [DB_SCHEMA](http://www12.0zz0.com/2018/09/30/14/766025642.png)
-
+ ![DB_SCHEMA](http://www12.0zz0.com/2018/09/30/14/766025642.png)
  ---------
 
 ### How to run tests
