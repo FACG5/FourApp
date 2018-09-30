@@ -47,7 +47,7 @@
 - run ```npm test``` to run tests
 --------
 
-Link Of Prototype [Here ]()
+Link Of Prototype [Here ](https://www.figma.com/file/FAlYM5KQuK9acISNPpdz6Gxp/FOUR)
 ------
 
 ### Tech stack
