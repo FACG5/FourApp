@@ -11,15 +11,24 @@ const addUser = (data, hash, role) => {
   return dbConnection.query(sql);
 };
 
-const checkEmail = (email) => {
+const checkUser = (username) => {
   const sql = {
-    text: 'SELECT email FROM users WHERE email=$1',
-    values: [email],
+    text: 'SELECT username FROM users WHERE username=$1',
+    values: [username],
+  };
+  return dbConnection.query(sql);
+};
+
+const checkId = (idNumber) => {
+  const sql = {
+    text: 'SELECT id_number FROM users WHERE id_number=$1',
+    values: [idNumber],
   };
   return dbConnection.query(sql);
 };
 
 module.exports = {
   addUser,
-  checkEmail,
+  checkUser,
+  checkId
 };

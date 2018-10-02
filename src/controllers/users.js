@@ -1,4 +1,4 @@
-const { addUser, checkEmail } = require('../database/queries/users');
+const { addUser, checkUser, checkId } = require('../database/queries/users');
 const hashPassword = require('./hash_password');
 
 exports.get = (req, res) => {
@@ -13,24 +13,28 @@ exports.post = (request, response, next) => {
   let { role } = data;
   (role !== 'admin') ? role = 'user' : role = 'admin';
   if (name && username && email && password && idNumber && mobile && jobTitle && role) {
-    checkEmail(email)
-      .then((res) => {
-        if (!res.rows[0]) {
-          console.log('res.rows[0].email', res.rows);
-          hashPassword(password, (err, hash) => {
-            if (err) {
-              next(err);
-            } else {
-              addUser(data, hash, role)
-                .then(() => { response.send({ message: 'User has been added successsfully' }); })
-                .catch(() => { next(err); });
-            }
-          });
-        } else {
-          console.log('res.rows[0].email', res.rows[0].email);
-          response.send({ message: 'email is already exist' });
-        }
-      });
+    hashPassword(password, (err, hash) => {
+      if (err) {
+        next(err);
+      } else {
+        checkUser(username).then((res) => {
+          if (!res.rows[0]) {
+            checkId(idNumber).then((result) => {
+              if (!result.rows[0]) {
+                addUser(data, hash, role)
+                  .then(() => {
+                    response.send({ message: 'User has been added successsfully' });
+                  }).catch((err) => { next(err); });
+              } else {
+                response.send({ message: 'ID Number is already exist' });
+              }
+            }).catch((err) => { next(err); });
+          } else {
+            response.send({ message: 'Username is already exist' });
+          }
+        }).catch((err) => { next(err); });
+      }
+    });
   } else {
     response.send({ message: 'Some thing wrong with the data please try again' });
   }
