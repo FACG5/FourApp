@@ -6,13 +6,13 @@ DROP TABLE IF EXISTS users, Projects, coordination_status, project_status CASCAD
 CREATE TABLE users (
 	Id SERIAL UNIQUE PRIMARY KEY,
 	name varchar(100) NOT NULL,
-	username varchar(100) NOT NULL,
+	username varchar(100) UNIQUE NOT NULL,
 	pass TEXT NOT NULL,
-	Email TEXT NOT NULL,
-	id_number integer NOT NULL,
-	mobile integer NOT NULL,
+	Email TEXT UNIQUE NOT NULL,
+	id_number integer UNIQUE NOT NULL,
+	mobile integer UNIQUE NOT NULL,
 	role varchar(100) NOT NULL,
-	job_title varchar(30) NOT NULL	
+	job_title varchar(30) NOT NULL
 );
 
 

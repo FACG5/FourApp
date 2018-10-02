@@ -1,17 +1,18 @@
 {
-  "name": "voyage",
+  "name": "FourApp",
   "version": "1.0.0",
   "engines": {
     "node": "8.9.4"
   },
-  "description": "App to collect all entertainments places at Gaza",
+  "description": "App to for the undp",
   "main": "index.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "test": "NODE_ENV=test tape test/test.js |  tap-spec",
-    "start": "nodemon src/index.js"
+    "start": "NODE_ENV=production node src/index.js",
+    "dev": "NODE_ENV=production nodemon src/index.js"
   },
   "repository": {
     "type": "git",
