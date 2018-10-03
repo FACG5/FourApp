@@ -1,0 +1,14 @@
+<div class="login-card">
+    <h1 class="title">Log-in</h1>
+    <br>
+    <h3 class="msg">{{msg}}</h3>
+    <br>
+    <form method="POST" action="/login">
+        <input id="email" type="text" name="username" placeholder="Email" required/>
+        <p id="emailErr" class="errorValid"></p>
+        <input type="password" name="pass" id="password" placeholder="Password">
+        <p id="emailErr" class="errorValid"></p>
+        <input type="submit" name="login" class="login login-submit" id="login" value="login">
+    </form>
+
+</div>
