@@ -38,7 +38,7 @@ function renderFitchedProjects(projects) {
         tr.appendChild(sectortd);
 
         const approvalstatustd = document.createElement('td');
-        approvalstatustd.innerHTML = elem.coordination_status_id;
+        approvalstatustd.innerHTML = elem.coordinationstatus;
         tr.appendChild(approvalstatustd);
 
         const locationtd = document.createElement('td');
