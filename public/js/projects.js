@@ -28,27 +28,27 @@ function renderFitchedProjects(projects) {
         // add id to tr
 
         const refnotd = document.createElement('td');
-        refnotd.innerHTML = elem.cla_ref;
+        refnotd.textContent = elem.cla_ref;
         tr.appendChild(refnotd);
 
         const projectnametd = document.createElement('td');
-        projectnametd.innerHTML = elem.project_name;
+        projectnametd.textContent = elem.project_name;
         tr.appendChild(projectnametd);
 
         const sectortd = document.createElement('td');
-        sectortd.innerHTML = elem.sector;
+        sectortd.textContent = elem.sector;
         tr.appendChild(sectortd);
 
         const approvalstatustd = document.createElement('td');
-        approvalstatustd.innerHTML = elem.coordination_status_id;
+        approvalstatustd.textContent = elem.coordination_status_id;
         tr.appendChild(approvalstatustd);
 
         const locationtd = document.createElement('td');
-        locationtd.innerHTML = elem.project_location;
+        locationtd.textContent = elem.project_location;
         tr.appendChild(locationtd);
 
         const descriptiontd = document.createElement('td');
-        descriptiontd.innerHTML = elem.description;
+        descriptiontd.textContent = elem.description;
         tr.appendChild(descriptiontd);
 
         const buttonstd = document.createElement('td');
