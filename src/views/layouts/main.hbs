@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>FOUR</title>
-    <head>
-    </head>
-    <body>
-        <header>
-        </header>
-        <main >
-            {{{body}}}
-        </main>
-    </body>
+    <link rel="stylesheet" href="{{css}}">
+    <link rel="stylesheet" href="{{css2}}">
+    <link rel="stylesheet" href="{{css3}}">
+    <link rel="stylesheet" href="{{css4}}">
+</head>
+
+<body>
+{{{body}}}
+
+    <script src="{{js}}"></script>
+    <script src="{{js2}}"></script>
+    <script src="{{js3}}"></script>
+    <script src="{{js4}}"></script>
     {{#if func}}
     <script src="/js/{{func}}.js"></script>
     {{/if}}
     {{#if auth}}
     <script src="/js/{{auth}}.js"></script>
     {{/if}}
+</body>
+
+
 </html>

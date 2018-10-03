@@ -1,16 +1,21 @@
 const express = require('express');
-const cookieParser = require('cookie-parser');
 const error = require('./error');
-const home = require('./home');
 const user = require('./users');
+const projects = require('./projects');
+const login = require('./login');
 
 const router = express.Router();
-router.use(cookieParser())
-router.get('/', home.get);
+
+router.get('/login', login.get);
+router.post('/login', login.post);
+router.get('/', projects.get);
 router.get('/add_user', user.get);
 router.post('/add_user', user.post);
 router.get('/view_users', user.userIndex);
 router.post('/view_users', user.authorization);
+router.post('/getprojects', projects.getprojects);
+
+
 router.use(error.client);
 router.use(error.server);
 
