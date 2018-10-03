@@ -3,7 +3,8 @@ const handlebars = require('express-handlebars');
 const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
-const controllers = require('./controllers');
+const router = require('./controllers');
+const helpers = require('./views/helpers/index');
 
 const app = express();
 app.set('port', process.env.PORT || 4000);
@@ -20,9 +21,10 @@ app.engine('hbs', handlebars({
   layoutsDir: path.join(__dirname, 'views', 'layouts'),
   partialsDir: path.join(__dirname, 'views', 'partials'),
   defaultLayout: 'main',
+  helpers,
 }));
 
 
-app.use(controllers);
+app.use(router);
 
 module.exports = app;

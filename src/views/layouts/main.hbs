@@ -17,7 +17,12 @@
     <script src="{{js2}}"></script>
     <script src="{{js3}}"></script>
     <script src="{{js4}}"></script>
-
+    {{#if func}}
+    <script src="/js/{{func}}.js"></script>
+    {{/if}}
+    {{#if auth}}
+    <script src="/js/{{auth}}.js"></script>
+    {{/if}}
 </body>
 
 
