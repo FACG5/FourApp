@@ -1,0 +1,36 @@
+<section>
+  <h1>Users list</h1>
+  <table>
+    <thead>
+      <tr>
+        <td>User Name</td>
+        <td>Name</td>
+        <td>ID Name</td>
+        <td>Mobile Number</td>
+        <td>Email</td>
+        <td>Admin</td>
+        <td>Delete</td>
+      </tr>
+    </thead>
+    <tbody>
+        {{#each userDetails}}
+      <tr>
+        <td class="username">{{username}}</td>
+        <td>{{name}}</td>
+        <td>{{id_number}}</td>
+        <td>{{mobile}}</td>
+        <td>{{email}}</td>
+        <td>
+          {{#if (isAdmin role)}}
+            <input type="checkbox"  onclick="checkRole(this.checked,'{{username}}');" name="" value="" checked>
+          {{else}}
+            <input type="checkbox"  onclick="checkRole(this.checked,'{{username}}');" name="" value="" >
+          {{/if}}
+        </td>
+        <td> <img src="/images/rubbish-bin.png"  onclick="deleteRow('{{username}}');" alt="delete">
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</section>

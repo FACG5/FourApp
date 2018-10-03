@@ -4,6 +4,7 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const router = require('./controllers');
+const helpers = require('./views/helpers/index');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.engine('hbs', handlebars({
   layoutsDir: path.join(__dirname, 'views', 'layouts'),
   partialsDir: path.join(__dirname, 'views', 'partials'),
   defaultLayout: 'main',
+  helpers,
 }));
 
 app.set('port', process.env.PORT || 4000);

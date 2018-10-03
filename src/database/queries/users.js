@@ -11,6 +11,13 @@ const addUser = (data, hash, role) => {
   return dbConnection.query(sql);
 };
 
+const viewUsers = () => {
+  const sql = {
+    text: 'SELECT * FROM users',
+  };
+  return dbConnection.query(sql);
+};
+
 const checkUser = (username) => {
   const sql = {
     text: 'SELECT username FROM users WHERE username=$1',
@@ -27,8 +34,37 @@ const checkId = (idNumber) => {
   return dbConnection.query(sql);
 };
 
+const checkMobile = (mobile) => {
+  const sql = {
+    text: 'SELECT mobile FROM users WHERE mobile=$1',
+    values: [mobile],
+  };
+  return dbConnection.query(sql);
+};
+
+const updateRole = (data) => {
+  const { role, userName } = data;
+  const sql = {
+    text: 'UPDATE users SET role=$1 where username =$2',
+    values: [role, userName],
+  };
+  return dbConnection.query(sql);
+};
+
+const deleteUser = (userName) => {
+  const sql = {
+    text: 'delete from users where username =$1',
+    values: [userName],
+  };
+  return dbConnection.query(sql);
+};
+
 module.exports = {
   addUser,
   checkUser,
-  checkId
+  checkId,
+  viewUsers,
+  updateRole,
+  deleteUser,
+  checkMobile
 };
