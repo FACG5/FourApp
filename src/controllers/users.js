@@ -71,8 +71,8 @@ exports.post = (request, response, next) => {
           if (!res.rows[0]) {
             checkId(idNumber).then((result) => {
               if (!result.rows[0]) {
-                checkMobile(mobile).then((resul) => {
-                  if (!resul.rows[0]) {
+                checkMobile(mobile).then((mobileResult) => {
+                  if (!mobileResult.rows[0]) {
                     addUser(data, hash, role)
                       .then(() => {
                         response.render('add_user', {

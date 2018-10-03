@@ -15,7 +15,6 @@ router.get('/view_users', user.userIndex);
 router.post('/view_users', user.authorization);
 router.post('/getprojects', projects.getprojects);
 
-
 router.use(error.client);
 router.use(error.server);
 

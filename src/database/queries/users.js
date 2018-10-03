@@ -45,7 +45,7 @@ const checkMobile = (mobile) => {
 const updateRole = (data) => {
   const { role, userName } = data;
   const sql = {
-    text: 'UPDATE users SET role=$1 where username =$2',
+    text: 'UPDATE users SET role=$1 WHERE username =$2',
     values: [role, userName],
   };
   return dbConnection.query(sql);
@@ -53,7 +53,7 @@ const updateRole = (data) => {
 
 const deleteUser = (userName) => {
   const sql = {
-    text: 'delete from users where username =$1',
+    text: 'DELETE FROM users WHERE username =$1',
     values: [userName],
   };
   return dbConnection.query(sql);
