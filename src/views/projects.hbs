@@ -1,385 +1,108 @@
 <div class="mybody">
-        <header>
-            <div class="header-item">
-                <a href="#">
-                    <img src="images/Four_New_Zealand_logo2.png" />
-                </a>
-            </div>
-            <ul class="header-item">
-                <li><a href="">Login</a></li>
-                <li><a href="">Logout</a></li>
+    <header>
+        <div class="header-item">
+            <a href="#">
+                <img src="images/Four_New_Zealand_logo2.png" />
+            </a>
+        </div>
+        <ul class="header-item">
+            <li>
+                <a href="">Login</a>
+            </li>
+            <li>
+                <a href="">Logout</a>
+            </li>
+        </ul>
+    </header>
+    <div class="container">
+        <h1 class="page-title">Projects List</h1>
+
+        <div class="breadcrumbs">
+            <ul>
+                <li>
+                    <a href="#">Home</a>
+                </li>
+                &nbsp; > &nbsp;
+                <li>
+                    <a href="#">Projects</a>
+                </li>
             </ul>
-        </header>
-        <div class="container">
-            <h1 class="page-title">Projects List</h1>
+        </div>
+        <div class="control">
+            <div class="searchbox">
 
-            <div class="breadcrumbs">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    &nbsp; > &nbsp;
-                    <li><a href="#">Projects</a></li>
-                </ul>
-            </div>
-            <div class="control">
-                <div class="searchbox">
-
-                    <input id="refnotxt" type="text" value="" placeholder="Ref No" />
-                    <input id="projectnametxt" type="text" value="" placeholder="Project Name" />
-                    <input id="locationtxt" type="text" value="" placeholder="Project location" />
-                    <input id="sectortxt" type="text" value="" placeholder="Sector" />
+                <input id="refnotxt" type="text" value="" placeholder="Ref No" />
+                <input id="projectnametxt" type="text" value="" placeholder="Project Name" />
+                <input id="locationtxt" type="text" value="" placeholder="Project location" />
+                <input id="sectortxt" type="text" value="" placeholder="Sector" />
 
 
-                    <select id="statusselect">
-                        {{#each coordinationstatus}}
-                        <option value="{{id}}">{{status}}</option>
-                        {{/each}}
-                    </select>
+                <select id="statusselect">
+                    <option value="0" selected>Any Status</option>
+                    {{#each coordinationstatus}}
+                    <option value="{{id}}">{{status}}</option>
+                    {{/each}}
+                </select>
 
-                </div>
-                
-                <a href="#" id="printbtn">Print</a>
-                <a href="#" id="newprojectbtn">New Project</a>
-                
             </div>
 
-            <div class="projectstable">
+            <a href="/projectsprint" id="printbtn">Print</a>
+            <a href="/projectadd" id="newprojectbtn">New Project</a>
+
+        </div>
+
+        <div class="projectstable">
+            <table>
+                <thead>
+                    <tr>
+                        <td>Ref No</td>
+                        <td>Project Name</td>
+                        <td>Sector</td>
+                        <td>Coordination Status</td>
+                        <td>Location</td>
+                        <td>Description</td>
+                        <td></td>
+                    </tr>
+                </thead>
+            </table>
+            <div class="projecttablebody">
                 <table>
-                    <thead>
-                        <tr>
-                            <td>Ref No</td>
-                            <td>Project Name</td>
-                            <td>Sector</td>
-                            <td>Coordination Status</td>
-                            <td>Location</td>
-                            <td>Description</td>
-                            <td></td>
-                        </tr>
-                    </thead>
-                </table>
-                <div class="projecttablebody">
-                    <table>
-                        <tbody id="projectstablebody">
-                            <tr>
-                                <td>
-                                    <a href="#">GP-1007</a>
-                                </td>
-                                <td>West School</td>
-                                <td>Education</td>
-                                <td>Suspended</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 65%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West hospital</td>
-                                <td>Education</td>
-                                <td>On going</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 40%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West GYM</td>
-                                <td>Education</td>
-                                <td>Un-funded</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 20%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West School</td>
-                                <td>Education</td>
-                                <td>Suspended</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 85%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West hospital</td>
-                                <td>Education</td>
-                                <td>On going</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 65%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West GYM</td>
-                                <td>Education</td>
-                                <td>Un-funded</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 95%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West School</td>
-                                <td>Education</td>
-                                <td>Suspended</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 25%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West hospital</td>
-                                <td>Education</td>
-                                <td>On going</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 50%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                      <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West hospital</td>
-                                <td>Education</td>
-                                <td>On going</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 50%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                                                  <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West hospital</td>
-                                <td>Education</td>
-                                <td>On going</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 50%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                                                  <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West hospital</td>
-                                <td>Education</td>
-                                <td>On going</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 50%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                                                  <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West hospital</td>
-                                <td>Education</td>
-                                <td>On going</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 50%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                                                  <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West hospital</td>
-                                <td>Education</td>
-                                <td>On going</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 50%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                                                  <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West hospital</td>
-                                <td>Education</td>
-                                <td>On going</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 50%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                                                  <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West hospital</td>
-                                <td>Education</td>
-                                <td>On going</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 50%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                                                  <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West hospital</td>
-                                <td>Education</td>
-                                <td>On going</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 50%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                                                  <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West hospital</td>
-                                <td>Education</td>
-                                <td>On going</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 50%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                                                  <tr>
-                                <td><a href="#">GP-1007</a></td>
-                                <td>West hospital</td>
-                                <td>Education</td>
-                                <td>On going</td>
-                                <td>Sheikh Ejleen</td>
-                                <td>
-                                    <div class="meter">
-                                        <span data-value="95" style="width: 50%"></span>
-                                    </div>
-                                </td>
-                                <td>
-                                    <a href="#"><img src="images/information-signal.png" alt="" /></a>
-                                    <a href="#"><img src="images/writing.png" alt="" /></a>
-                                    <a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>
-                                </td>
-                            </tr>
-                            
+                    <tbody id="projectstablebody">
 
-                        </tbody>
-                    </table>
-                </div>
+                        {{#each allprojects}}
+                        <tr data-id="{{id}}">
+                            <td>
+                                <a href="/projectdetails/{{id}}">{{cla_ref}}</a>
+                            </td>
+                            <td>{{project_name}}</td>
+                            <td>{{sector}}</td>
+                            <td>{{coordinationstatus}}</td>
+                            <td>{{project_location}}</td>
+                            <td>{{description}}</td>
+                            <td>
+                                <a href="/projectdetails/{{id}}">
+                                    <img src="images/information-signal.png" alt="" />
+                                </a>
+                                <a href="/projectedit/{{id}}">
+                                    <img src="images/writing.png" alt="" />
+                                </a>
+                                <a class="deletebtn">
+                                    <img src="images/dustbin(1).png" alt="" />
+                                </a>
+                            </td>
+                        </tr>
+                        {{/each}}
+                    </tbody>
+                </table>
             </div>
         </div>
-        <footer>
+    </div>
+    <footer>
 
-            <div>
-                <h1>All Rights Reserved To FOUR ACMTeam</h1>
-            </div>
-        </footer>
+        <div>
+            <h1>All Rights Reserved To FOUR ACMTeam</h1>
+        </div>
+    </footer>
 
 </div>
 
@@ -393,65 +116,50 @@
 
 
 
-    <div id="myModal" class="modal">
+<div id="myModal" class="modal">
 
-        <div class="modal-content">
-            <div class="modal-header">
-                
-                    <h2>Deletion Confirmation</h2>
-               
-                <div>
-                    <span class="close">&times;</span>
-                </div>
-               
+    <div class="modal-content">
+        <div class="modal-header">
+
+            <h2>Deletion Confirmation</h2>
+
+            <div>
+                <span class="close">&times;</span>
             </div>
-            <div class="modal-body">
-                
-                <p><strong>This Project Will Be Deleted Permenantly.</strong></p>
-                <p> Are you sure you want to proceed?</p>
-            </div>
-            <div class="modal-footer">
-                <a href="" class="modalbtn confirmdelete">OK</a>
-                <a href="" class="modalbtn canceldelete">Cancel</a>
-            </div>
+
         </div>
+        <div class="modal-body">
 
+            <p>
+                <strong>This Project Will Be Deleted Permenantly.</strong>
+            </p>
+            <p> Are you sure you want to proceed?</p>
+        </div>
+        <div class="modal-footer">
+            <a href="" class="modalbtn confirmdelete">OK</a>
+            <a class="modalbtn canceldelete">Cancel</a>
+        </div>
     </div>
 
+</div>
 
-    <script>
-        
-        if (document.addEventListener) {
-            document.addEventListener("click", handleClick, false);
-        }
-        else if (document.attachEvent) {
-            document.attachEvent("onclick", handleClick);
-        }
 
-        function handleClick(event) {
-            event = event || window.event;
-            event.target = event.target || event.srcElement;
+<script>
 
-            var element = event.target;
-
-            // Climb up the document tree from the target of the event
-            while (element) {
-                if (element.nodeName === "A" && /deletebtn/.test(element.className)) {
-                    // The user clicked on a <button> or clicked on an element inside a <button>
-                    // with a class name called "foo"
-                    doSomething(element);
-                    break;
-                }
-
-                element = element.parentNode;
+    document.addEventListener("click", handleClick, false);
+    function handleClick(event) {
+        event = event || window.event;
+        event.target = event.target || event.srcElement;
+        var element = event.target;
+        // Climb up the document tree from the target of the event
+        while (element) {
+            if (element.nodeName === "A" && /deletebtn/.test(element.className)) {
+                 modalconfirmdelete.setAttribute('href', `/deleteproject/${element.parentElement.parentElement.dataset.id}`);
+                 modal.style.display = "block";
+                break;
             }
-        }    
-
-        function doSomething(button) {
-            // do something with button
-            modal.style.display = "block";
-
+            element = element.parentNode;
         }
+    }
 
-    </script>
-
+</script>

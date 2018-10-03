@@ -30,6 +30,7 @@ CREATE TABLE project_status (
 
 
 CREATE TABLE Projects (
+	id SERIAL UNIQUE PRIMARY KEY,
 	sn varchar NOT NULL,
 	cla_ref varchar NOT NULL,
 	project_no varchar NOT NULL,
@@ -62,9 +63,7 @@ CREATE TABLE Projects (
 	project_completion text NOT NULL,
 	description TEXT NOT NULL,
     FOREIGN KEY (coordination_status_id) REFERENCES coordination_status(id) ON DELETE CASCADE,
-    FOREIGN KEY (project_status_id) REFERENCES project_status(id) ON DELETE CASCADE,
-	FOREIGN KEY (sector_id) REFERENCES sectors(id) ON DELETE CASCADE
-
+    FOREIGN KEY (project_status_id) REFERENCES project_status(id) ON DELETE CASCADE
 );
 
 Insert INTO users (name, username, pass, email ,id_number ,mobile ,role ,job_title)VALUES ('Marwan Elkhoudary', 'melkhoudary', '$2a$10$b87/SM7GS1rjoFV2i8z5X.dGGQcZPW8l.fhVHxgg89GnOBAGLlf7a', 'marwangaza@hotmail.com', '800640864', '0595599633', 'admin', 'Head of Department'),

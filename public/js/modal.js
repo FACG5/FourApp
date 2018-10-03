@@ -22,6 +22,7 @@ window.onclick = function (event) {
 
 cancelbtn.onclick = () => {
     modal.style.display = "none";
+
 }
 
 
