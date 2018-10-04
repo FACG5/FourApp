@@ -14,13 +14,11 @@ exports.get = (req, res) => {
 
 exports.post = (request, response) => {
   const data = request.body;
-  console.log(data);
   projectEdit(data, (err, result) => {
     if (err) {
       response.render('projectEdit');
-      console.log('err', err);
     } else {
-      response.redirect('/');
+      response.redirect('/projectDetails/'+ data.id);
     }
   });
 };
