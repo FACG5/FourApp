@@ -8,6 +8,7 @@ const getProjectDetails = (id, cb) => {
 
   dbconnection.query(sql, (err, res) => {
     if (err) {
+      console.log(err);
       cb(err);
     } else {
       cb(null, res.rows);

@@ -264,7 +264,7 @@ footer div{
 
         .searchbox{
             display:flex;
-            width:70%;
+            width:78%;
             height:50px;
             background-color:#E5F0F5;
             margin-bottom:10px;
@@ -278,12 +278,23 @@ footer div{
             border-color:#E5F0F5;
             margin-right:15px;
         }
-        #refnotxt, #locationtxt, #sectortxt{
+        #refnotxt{
             height: 25px;
-            width:12%;
+            width:10%;
             border-color:#E5F0F5;
             margin-right:15px;
         }
+        #locationtxt, #sectortxt{
+            height: 25px;
+            width:16%;
+            border-color:#E5F0F5;
+            margin-right:15px;
+        }
+
+        .searchbox input{
+            padding:2px 5px;
+        }
+
         .control input::placeholder{
             color: #ACC4CE;
         }
@@ -293,7 +304,7 @@ footer div{
             border-color:#E5F0F5;
             margin-right:15px;
             background-color:white;
-            color:#ACC4CE;
+            color:#294552;
         }
 
         .control{
@@ -313,6 +324,10 @@ footer div{
             box-sizing:border-box;
             background-color:#294552;
             color:white;
+        }
+        
+        #newprojectbtn{
+            margin-right: 0;
         }
         #printbtn{
             margin-left: auto;
