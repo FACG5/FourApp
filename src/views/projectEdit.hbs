@@ -1,0 +1,156 @@
+{{#each response}}
+<form class="editContainer" id="project_form" action="/projectEdit" method="POST">
+    <h3 class="editTitle">Edit Project</h3>
+    <div class="editbox">
+        <div class="editItem">
+            <label for="sn">Serial No.</label>
+            <input id="sn" type="text" value="{{sn}}" name="sn">
+        </div>
+        <div class="editItem">
+            <label for="cla_ref">CLA Ref Number</label>
+            <input id="cla_ref" type="text" value="{{cla_ref}}" name="cla_ref">
+        </div>
+        <div class="editItem">
+            <label for="project_no">Project No.</label>
+            <input id="project_no" type="text" value="{{project_no}}" name="project_no">
+        </div>
+        <div class="editItem">
+            <label for="project_name">Project Name</label>
+            <input id="project_name" type="text" value="{{project_name}}" name="project_name">
+        </div>
+        <div class="editItem">
+            <label for="sector">Sector</label>
+            <input id="sector" type="text" value="{{sector}}" name="sector">
+        </div>
+        <div class="editItem">
+            <label for="contractor_company">Contractor Company</label>
+            <input id="contractor_company" type="text" value="{{contractor_company}}" name="contractor_company">
+        </div>
+        <div class="editItem">
+            <label for="contractor_name">Contractor Name</label>
+            <input id="contractor_name" type="text" value="{{contractor_name}}" name="contractor_name">
+        </div>
+        <div class="editItem">
+            <label for="contractor_id">Contractor Id</label>
+            <input id="contractor_id" type="text" value="{{contractor_id}}" name="contractor_id">
+        </div>
+        <div class="editItem">
+            <label for="donor">Donor</label>
+            <input id="donor" type="text" value="{{donor}}" name="donor">
+        </div>
+        <div class="editItem">
+            <label for="project_location">Project Location</label>
+            <input id="project_location" value="{{project_location}}" type="text" name="project_location">
+        </div>
+        <div class="editItem">
+            <label for="implementing_agency">Implementing Agency</label>
+            <input id="implementing_agency" value="{{implementing_agency}}" type="text" name="implementing_agency">
+        </div>
+        <div class="editItem">
+            <label for="gps_x">GPS - X</label>
+            <input id="gps_x" type="text" value="{{gps_x}}" name="gps_x">
+        </div>
+        <div class="editItem">
+            <label for="gps_y">GPS - Y</label>
+            <input id="gps_y" type="text" value="{{gps_y}}" name="gps_y">
+        </div>
+        <div class="editItem">
+            <label for="project_budget">Project Budget</label>
+            <input id="project_budget" type="text" value="{{project_budget}}" name="project_budget">
+        </div>
+        <div class="editItem">
+            <label for="agreement_budget">Agreement Budget</label>
+            <input id="agreement_budget" type="text" value="{{agreement_budget}}" name="agreement_budget">
+        </div>
+        <div class="editItem">
+            <label for="description"> Discreption</label>
+            <input id="description" type="text" value="{{description}}" name="description">
+        </div>
+        <div class="editItem">
+            <label for="upload">Attachment File</label>
+            <input id="upload" type="file" name="uploaded_File">
+        </div>
+    </div>
+
+    <h4 class="editTitle">Status of COGAT Approval</h4>
+    <div class="editbox">
+        <div class="editItem">
+            <label for="submit_date">Date Submitted to COGAT</label>
+            <input id="submit_date" type="Date" value="{{submit_date}}" name="submit_date">
+        </div>
+        <div class="editItem">
+            <label for="approval_date">Approval Date</label>
+            <input id="approval_date" type="Date" value="{{approval_date}}" name="approval_date">
+        </div class="editItem">
+        <div class="editItem">
+            <label for="justification_send">Justification </label>
+            <input id="justification_send" type="text" value="{{justification_send}}" name="justification_send">
+        </div>
+        <div class="editItem">
+            <label for="justification_approval">Date of Justification Approval</label>
+            <input id="justification_approval" type="Date" value="{{justification_approval}}" name="justification_approval">
+        </div>
+    </div>
+
+    <h4 class="editTitle">Re-approval Status</h4>
+    <div class="editbox">
+        <div class="editItem">
+            <label for="resubmit_date">Date Submitted to COGAT For Re-approval</label>
+            <input id="resubmit_date" type="text" value="{{resubmit_date}}" name="resubmit_date">
+        </div>
+        <div class="editItem">
+            <label for="reapproval_date">Approval Date</label>
+            <input id="reapproval_date" type="Date" value="{{reapproval_date}}" name="reapproval_date">
+        </div>
+    </div>
+    <h4 class="editTitle">Status of Project Coordination</h4>
+
+    <div class="editbox">
+        <div class="editItem">
+            <label for="coordination_status_id">Coordination Status</label>
+            <input id="coordination_status_id" type="text" value="{{coordination_status_id}}" name="coordination_status_id">
+        </div>
+        <div class="editItem">
+            <label for="coordination_percentage">Completed Coordination Percentage</label>
+            <input id="coordination_percentage" type="text" value="{{coordination_percentage}}" name="coordination_percentage">
+        </div>
+        <div class="editItem">
+            <label for="remaining_material">Remaining Materials in Trucks</label>
+            <input id="remaining_material" type="text" value="{{remaining_material}}" name="remaining_material">
+        </div>
+        <div class="editItem">
+            <label for="coordination_starting">Coordination Starting Date</label>
+            <input id="coordination_starting" type="Date" value="{{coordination_starting}}" name="coordination_starting">
+        </div>
+        <div class="editItem">
+            <label for="coordination_completion">Coordination Completion Date</label>
+            <input id="coordination_completion" type="Date" value="{{coordination_completion}}" name="coordination_completion">
+        </div>
+    </div>
+
+    <h4 class="editTitle">Status of Project Implementation</h4>
+
+    <div class="editbox">
+        <div class="editItem">
+            <label for="project_status_id">Project Status</label>
+            <input id="project_status_id" type="text" value="{{project_status_id}}" name="project_status_id">
+        </div>
+        <div class="editItem">
+            <label for="project_percentage">Work Progress Percentage</label>
+            <input id="project_percentage" type="text" value="{{project_percentage}}" name="project_percentage">
+        </div>
+        <div class="editItem">
+            <label for="project_starting">Starting Date</label>
+            <input id="project_starting" type="date" value="{{project_starting}}" name="project_starting">
+        </div>
+        <div class="editItem">
+            <label for="project_completion">Completion Date</label>
+            <input id="project_completion" type="Date" value="{{project_completion}}" name="project_completion">
+        </div>
+
+    </div>
+    <div class="editButtons">
+        <button class="editButton" name="projectedit" value="submit" type="submit"> SUBMIT </button>
+    </div>
+</form>
+{{/each}}

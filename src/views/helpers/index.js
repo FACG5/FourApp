@@ -1,3 +1,3 @@
 module.exports = {
-  isAdmin: require('./is_admin')
+  isAdmin: require('./is_admin'),
 }

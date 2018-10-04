@@ -1,0 +1,152 @@
+{{#each response}}
+
+<div class="DetailsContainer">
+
+    <h3 class="DetailsTitle">Project Details</h3>
+    <div class="detailsBox">
+        <div class="detailsItem">
+
+
+            <p>Serial Number</p>
+            <p>{{sn}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>CLA Ref Number</p>
+            <p>{{cla_ref}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Project No. </p>
+            <p>{{project_no}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Project Name</p>
+            <p>{{project_name}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Sector</p>
+            <p>{{sector}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Contractor Company</p>
+            <p>{{contractor_company}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Contractor Name</p>
+            <p>{{contractor_name}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Contractor ID</p>
+            <p>{{contractor_id}}</p>
+        </div>
+
+        <div class="detailsItem">
+            <p>Donor</p>
+            <p>{{donor}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Project Location</p>
+            <p>{{project_location}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>GPS-X</p>
+            <p>{{gps_x}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>GPS-Y</p>
+            <p>{{gps_y}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Project Budget in US$</p>
+            <p>{{project_budget}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Agreement Budget</p>
+            <p>{{agreement_budget}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Implementing Agency/Unit</p>
+            <p>{{implementing_agency}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Description</p>
+            <p>{{description}}</p>
+        </div>
+    </div>
+    <h3 class="DetailsTitle">Status of COGAT Approval</h3>
+    <div class="detailsBox">
+        <div class="detailsItem">
+            <p>Date Submitted to COGAT</p>
+            <p>{{submit_date}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Approval Date</p>
+            <p>{{approval_date}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Justification Sent</p>
+            <p>{{justification_send}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Date of Justification Approval</p>
+            <p>{{justification_approval}}</p>
+        </div>
+    </div>
+    <h3 class="DetailsTitle">Re-approval Status</h3>
+    <div class="detailsBox">
+        <div class="detailsItem">
+            <p>Date Submitted to COGAT For Re-approval</p>
+            <p>{{resubmit_date}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Approval Date</p>
+            <p>{{reapproval_date}}</p>
+        </div>
+    </div>
+    <h3 class="DetailsTitle">Status of Project Coordination</h3>
+    <div class="detailsBox">
+        <div class="detailsItem">
+            <p>Coordination Status</p>
+            <p>{{co_status}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Completed Coordination Percentage</p>
+            <p>{{coordination_percentage}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Remaining Materials in Trucks</p>
+            <p>{{remaining_material}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Coordination Starting Date</p>
+            <p>{{coordination_starting}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Coordination Completion Date</p>
+            <p>{{coordination_completion}}</p>
+        </div>
+    </div>
+
+    <h3 class="DetailsTitle">Status of Project Implementation</h3>
+    <div class="detailsBox">
+        <div class="detailsItem">
+            <p>Project Status</p>
+            <p>{{pr_status}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Work Progress Percentage</p>
+            <p>{{project_percentage}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Starting Date</p>
+            <p>{{project_starting}}</p>
+        </div>
+        <div class="detailsItem">
+            <p>Completion Date</p>
+            <p>{{project_completion}}</p>
+        </div>
+    </div>
+    <div class="detailsButtons">
+        <button class="detailsButton" name="printDetails" value="submit" type="submit">PRINT</button>
+    </div>
+</div>
+{{/each}}

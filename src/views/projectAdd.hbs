@@ -1,0 +1,162 @@
+<form class="addContainer" id="project_form" action="/projectadd" method="POST">
+    <h3 class="addTitle">Create Project</h3>
+    <div class="addbox">
+        <div class="addItem">
+            <label for="sn">Serial No.</label>
+            <input id="sn" type="text" name="sn">
+        </div>
+        <div class="addItem">
+            <label for="cla_ref">CLA Ref Number</label>
+            <input id="cla_ref" type="text" name="cla_ref">
+        </div>
+        <div class="addItem">
+            <label for="project_no">Project No.</label>
+            <input id="project_no" type="text" name="project_no">
+        </div>
+        <div class="addItem">
+            <label for="project_name">Project Name</label>
+            <input id="project_name" type="text" name="project_name">
+        </div>
+        <div class="addItem">
+            <label for="sector">Sector</label>
+            <input id="sector" type="text" name="sector">
+        </div>
+        <div class="addItem">
+            <label for="contractor_company">Contractor Company</label>
+            <input id="contractor_company" type="text" name="contractor_company">
+        </div>
+        <div class="addItem">
+            <label for="contractor_name">Contractor Name</label>
+            <input id="contractor_name" type="text" name="contractor_name">
+        </div>
+        <div class="addItem">
+            <label for="contractor_id">Contractor Id</label>
+            <input id="contractor_id" type="text" name="contractor_id">
+        </div>
+        <div class="addItem">
+            <label for="donor">Donor</label>
+            <input id="donor" type="text" name="donor">
+        </div>
+        <div class="addItem">
+            <label for="project_location">Project Location</label>
+            <input id="project_location" type="text" name="project_location">
+        </div>
+        <div class="addItem">
+            <label for="implementing_agency">Implementing Agency</label>
+            <input id="implementing_agency" type="text" name="implementing_agency">
+        </div>
+        <div class="addItem">
+            <label for="gps_x">GPS - X</label>
+            <input id="gps_x" type="text" name="gps_x">
+        </div>
+        <div class="addItem">
+            <label for="gps_y">GPS - Y</label>
+            <input id="gps_y" type="text" name="gps_y">
+        </div>
+        <div class="addItem">
+            <label for="project_budget">Project Budget</label>
+            <input id="project_budget" type="text" name="project_budget">
+        </div>
+        <div class="addItem">
+            <label for="agreement_budget">Agreement Budget</label>
+            <input id="agreement_budget" type="text" name="agreement_budget">
+        </div>
+        <div class="addItem">
+            <label for="description"> Discreption</label>
+            <input id="description" type="text" name="description">
+        </div>
+        <div class="addItem">
+            <label for="upload">Attachment File</label>
+            <input id="upload" type="file" name="uploaded_File">
+        </div>
+    </div>
+
+    <h4 class="addTitle">Status of COGAT Approval</h4>
+    <div class="addbox">
+        <div class="addItem">
+            <label for="submit_date">Date Submitted to COGAT</label>
+            <input id="submit_date" type="Date" name="submit_date">
+        </div>
+        <div class="addItem">
+            <label for="approval_date">Approval Date</label>
+            <input id="approval_date" type="Date" name="approval_date">
+        </div class="addItem">
+        <div class="addItem">
+            <label for="justification_send">Justification Sent</label>
+            <input id="justification_send" type="text" name="justification_send">
+        </div>
+        <div class="addItem">
+            <label for="justification_approval">Date of Justification Approval</label>
+            <input id="justification_approval" type="Date" name="justification_approval">
+        </div>
+    </div>
+
+    <h4 class="addTitle">Re-approval Status</h4>
+    <div class="addbox">
+        <div class="addItem">
+            <label for="resubmit_date">Date Submitted to COGAT For Re-approval</label>
+            <input id="resubmit_date" type="text" name="resubmit_date">
+        </div>
+        <div class="addItem">
+            <label for="reapproval_date">Approval Date</label>
+            <input id="reapproval_date" type="Date" name="reapproval_date">
+        </div>
+    </div>
+    <h4 class="addTitle">Status of Project Coordination</h4>
+
+    <div class="addbox">
+        <div class="addItem">
+            <label for="coordination_status_id">Coordination Status</label>
+            <select id="statusselect1" defaultValue="1" name="coordination_status_id">
+                {{#each crStatus.rows}}
+                <option value="{{id}}">{{status}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="addItem">
+            <label for="coordination_percentage">Completed Coordination Percentage</label>
+            <input id="coordination_percentage" type="text" name="coordination_percentage">
+        </div>
+        <div class="addItem">
+            <label for="remaining_material">Remaining Materials in Trucks</label>
+            <input id="remaining_material" type="text" name="remaining_material">
+        </div>
+        <div class="addItem">
+            <label for="coordination_starting">Coordination Starting Date</label>
+            <input id="coordination_starting" type="Date" name="coordination_starting">
+        </div>
+        <div class="addItem">
+            <label for="coordination_completion">Coordination Completion Date</label>
+            <input id="coordination_completion" type="Date" name="coordination_completion">
+        </div>
+    </div>
+
+    <h4 class="addTitle">Status of Project Implementation</h4>
+
+    <div class="addbox">
+        <div class="addItem">
+            <label for="project_status_id">Project Status</label>
+            <select defaultValue="1" name="project_status_id" id="statusselect1">
+                {{#each prStatus.rows}}
+                <option value="{{id}}">{{status}}</option>
+                {{/each}}
+            </select>
+        </div>
+        <div class="addItem">
+            <label for="project_percentage">Work Progress Percentage</label>
+            <input id="project_percentage" type="text" name="project_percentage">
+        </div>
+        <div class="addItem">
+            <label for="project_starting">Starting Date</label>
+            <input id="project_starting" type="date" name="project_starting">
+        </div>
+        <div class="addItem">
+            <label for="project_completion">Completion Date</label>
+            <input id="project_completion" type="Date" name="project_completion">
+        </div>
+
+    </div>
+    <div class="addButtons">
+        <button class="addButton" name="projectAdd" value="submit" type="submit"> SUBMIT </button>
+    </div>
+</form>
