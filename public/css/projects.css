@@ -325,6 +325,10 @@ footer div{
             background-color:#294552;
             color:white;
         }
+        
+        #newprojectbtn{
+            margin-right: 0;
+        }
         #printbtn{
             margin-left: auto;
         }

@@ -9,7 +9,6 @@ const createCookie = (user, cb) => {
   });
 };
 
-
 const getTokenData = (data, cb) => {
   verify(data, process.env.SECRET, (err, decoded) => {
     if (err) {

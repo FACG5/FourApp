@@ -24,7 +24,6 @@ const getprojects = (request, response) => {
   getProjects(request.body).then((responseults) => {
     response.json({ err: null, result: responseults.rows });
   }).catch((err) => {
-    console.log(err);
     response.json({ err });
   });
 };
