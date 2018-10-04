@@ -66,6 +66,7 @@ exports.post = (request, response, next) => {
     hashPassword(password, (err, hash) => {
       if (err) {
         next(err);
+        console.log('first error', err)
       } else {
         checkUser(username).then((res) => {
           if (!res.rows[0]) {
@@ -79,6 +80,7 @@ exports.post = (request, response, next) => {
                           message: 'User has been added successsfully',
                         });
                       }).catch((err) => {
+                        console.log('second error', err);
                         next(err);
                       });
                   } else {
@@ -87,6 +89,8 @@ exports.post = (request, response, next) => {
                     });
                   }
                 }).catch((err) => {
+                  console.log('third error', err)
+
                   next(err);
                 });
               } else {
@@ -95,6 +99,7 @@ exports.post = (request, response, next) => {
                 });
               }
             }).catch((err) => {
+              console.log('fourth error', err)
               next(err);
             });
           } else {
@@ -103,6 +108,7 @@ exports.post = (request, response, next) => {
             });
           }
         }).catch((err) => {
+          console.log('fifth error', err)
           next(err);
         });
       }
