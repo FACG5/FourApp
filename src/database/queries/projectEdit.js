@@ -36,17 +36,13 @@ const projectEdit = (object, cb) => {
       object.project_starting,
       object.project_completion,
       object.description,
-      object.id
+      object.id,
     ],
   };
-
   db_connection.query(sql, (editerr, res) => {
     if (editerr) {
       cb(editerr);
-      console.log('editerr', editerr);
     } else {
-        console.log('pass');
-        
       cb(null, res.rows);
     }
   });

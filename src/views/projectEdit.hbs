@@ -1,7 +1,8 @@
 {{#each response}}
-<form class="editContainer" id="project_form" action="/projectEdit" method="POST">
+<form class="editContainer" id="project_form" action="/projectEdit/{{id}}" method="POST">
     <h3 class="editTitle">Edit Project</h3>
     <div class="editbox">
+            <input type="hidden" value="{{id}}" name="id">
         <div class="editItem">
             <label for="sn">Serial No.</label>
             <input id="sn" type="text" value="{{sn}}" name="sn">
