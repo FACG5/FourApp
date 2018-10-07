@@ -10,7 +10,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "NODE_ENV=test tape test/test.js |  tap-spec",
+    "test": "NODE_ENV=test tape tests/backend_test.js |  tap-spec",
     "start": "NODE_ENV=production node src/index.js",
     "dev": "NODE_ENV=production nodemon src/index.js"
   },
