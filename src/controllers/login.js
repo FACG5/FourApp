@@ -6,8 +6,12 @@ exports.get = (request, response) => {
   response.render('login', { js: 'js/login.js', css: 'css/login.css' });
 };
 
+exports.logOut = (request, response) => {
+  response.clearCookie('data');
+  response.redirect('/login');
+};
+
 exports.post = (request, response) => {
-  console.log(request.body);
   const { pass, username } = request.body;
   checkUser(username).then((result) => {
     if (result.length === 0) {
