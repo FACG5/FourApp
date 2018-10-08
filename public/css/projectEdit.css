@@ -3,15 +3,12 @@ body{
 }
 .editContainer{
     display:grid;
-    
 }
 
 .editbox{
     display: grid;
     grid-template-columns: 100%;
     grid-gap:2%;
-    
-
 }
 
 .editItem{
@@ -31,7 +28,7 @@ body{
     height: 30px;
     padding: 15px 0 0px 20px;
     color: #D4C5C5;
-    
+
 }
 
 .editButtons{
@@ -44,7 +41,7 @@ body{
     margin:10px;
     width:150px;
     background-color: #294552;
-    color:white; 
+    color:white;
     height: 35px;
     font-weight: 600;
 }

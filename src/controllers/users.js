@@ -17,6 +17,7 @@ exports.userIndex = (req, res) => {
       userDetails,
       auth: 'authorization',
       func: 'helpers',
+      css: 'css/view_users.css'
     });
   }).catch((err) => {
     next(err);
@@ -45,7 +46,7 @@ exports.authorization = (req, res, next) => {
 };
 
 exports.get = (req, res) => {
-  res.render('add_user');
+  res.render('add_user',{ css:'css/add_user.css'});
 };
 
 exports.post = (request, response, next) => {

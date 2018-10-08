@@ -20,6 +20,7 @@ exports.post = (request, response) => {
           createCookie({
             id: result.rows[0].id,
             name: result.rows[0].name,
+            role: result.rows[0].role,
           },
           (createtokenerror, token) => {
             response.setHeader(

@@ -8,8 +8,8 @@ b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video
 
@@ -27,7 +27,7 @@ html,body{
     width:100%;
 }
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
+article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
 	display: block;
 }
@@ -72,7 +72,7 @@ header{
     display:flex;
     justify-content:space-between;
     align-content:center;
-  
+
 }
 
 header img{
@@ -207,7 +207,7 @@ table>tbody>tr>td:nth-child(6), table>thead>tr>td:nth-child(6){
 tbody>tr>td>a>img{
     height:20px;
     margin-right:10px;
- 
+
 }
 
  a{
@@ -231,7 +231,7 @@ footer div{
 }
 
 
-        .meter { 
+        .meter {
 	        height: 10px;  /* Can be anything */
 	        background: #F1F1F1;
 	        -moz-border-radius: 25px;
@@ -254,7 +254,7 @@ footer div{
             #294552 37%,
             #294552 69%
           );
-          box-shadow: 
+          box-shadow:
             inset 0 2px 9px  rgba(255,255,255,0.3),
             inset 0 -2px 6px rgba(0,0,0,0.4);
         }
@@ -327,4 +327,3 @@ footer div{
         .breadcrumbs > ul >li>a{
             color:#ACC4CE;
         }
-
