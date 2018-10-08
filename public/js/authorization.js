@@ -29,7 +29,7 @@ const deleteRow = (userName) => {
       },
       body: JSON.stringify(data),
     }).then(response => response.json()).then((response) => {
-      window.location='/view_users';
+      window.location = '/view_users';
       const { message } = response;
       alert(message);
     }).catch(error => alert('ERROR !', error));

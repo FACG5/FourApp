@@ -1,5 +1,8 @@
 <section>
-  <p id="msg"></p>
+  {{#if addUserSuccessMsg}}
+  <p >{{addUserSuccessMsg}}</p>
+  {{/if}}
+
   <h1>Users list</h1>
   <table>
     <thead>

@@ -10,7 +10,8 @@
     "test": "test"
   },
   "scripts": {
-    "test": "NODE_ENV=test tape tests/backend_test.js |  tap-spec",
+    "testsuper": "NODE_ENV=test tape tests/backend_test.js |  tap-spec",
+    "test": "NODE_ENV=test tape tests/db_test.js | tap-spec",
     "start": "NODE_ENV=production node src/index.js",
     "dev": "NODE_ENV=production nodemon src/index.js"
   },
@@ -43,9 +44,11 @@
     "env2": "^2.2.2",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
     "handlebars": "^4.0.12",
     "istanbul": "^0.4.5",
     "jsonwebtoken": "^8.3.0",
-    "pg": "^7.4.3"
+    "pg": "^7.4.3",
+    "req-flash": "0.0.3"
   }
 }

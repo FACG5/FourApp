@@ -7,12 +7,13 @@ const {
   deleteUser,
   checkMobile,
 } = require('../database/queries/users');
-const hashPassword = require('./hash_password');
+const hashPassword = require('../authentication/hashpassword');
 
 exports.userIndex = (req, res) => {
   viewUsers().then((result) => {
     const userDetails = result.rows;
     res.render('view_users', {
+      addUserSuccessMsg: req.flash('addUserSuccessMsg'),
       userDetails,
       auth: 'authorization',
       func: 'helpers',
@@ -62,7 +63,7 @@ exports.post = (request, response, next) => {
     role,
   } = data;
   (role !== 'admin') ? role = 'user' : role = 'admin';
-  if (name && username && email && password && idNumber && mobile && jobTitle) {
+  if (name && username && email && password && idNumber && mobile && jobTitle && role) {
     hashPassword(password, (err, hash) => {
       if (err) {
         next(err);
@@ -75,9 +76,8 @@ exports.post = (request, response, next) => {
                   if (!mobileResult.rows[0]) {
                     addUser(data, hash, role)
                       .then(() => {
-                        response.render('add_user', {
-                          message: 'User has been added successsfully',
-                        });
+                        request.flash('addUserSuccessMsg', 'User Added successfully!');
+                        response.redirect('/view_users');
                       }).catch((err) => {
                         next(err);
                       });
