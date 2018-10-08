@@ -16,6 +16,7 @@ exports.userIndex = (req, res) => {
       userDetails,
       auth: 'authorization',
       func: 'helpers',
+      isadmin: req.admin,
     });
   }).catch((err) => {
     next(err);

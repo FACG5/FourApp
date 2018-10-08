@@ -20,7 +20,7 @@ router.get('/projectadd', authorize, projectAdd.get);
 router.post('/projectadd', authorize, projectAdd.post);
 router.get('/projectDetails/:id', authorize, projectDetails.get);
 router.get('/projectedit/:id', authorize, projectEdit.get);
-router.post('/projectedit/:id', authorize, projectEdit.post);
+router.post('/projectedit', authorize, projectEdit.post);
 router.post('/view_users', authorize, user.authorization);
 router.post('/getprojects', authorize, projects.getprojects);
 router.get('/deleteproject/:id', authorize, projects.deleteProject);

@@ -3,7 +3,11 @@ const checkUser = require('../database/queries/checkUser');
 const { createCookie } = require('../authentication/authentication');
 
 exports.get = (request, response) => {
-  response.render('login', { js: 'js/login.js', css: 'css/login.css' });
+  response.render('login', {
+    js: 'js/login.js',
+    css: 'css/login.css',
+    isadmin: request.admin,
+  });
 };
 
 exports.logOut = (request, response) => {
@@ -24,6 +28,7 @@ exports.post = (request, response) => {
           createCookie({
             id: result.rows[0].id,
             name: result.rows[0].name,
+            role: result.rows[0].role,
           },
           (createtokenerror, token) => {
             response.setHeader(

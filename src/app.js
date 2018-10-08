@@ -23,6 +23,11 @@ app.use((req, res, next) => {
     } else {
       req.token = token;
       req.userauthed = true;
+      if (token.role === 'admin') {
+        req.admin = true;
+      } else {
+        req.admin = false;
+      }
       next();
     }
   });

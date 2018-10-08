@@ -252,6 +252,11 @@
                 </a>
             </div>
             <ul class="header-item">
+                {{#if isadmin}}
+                <li>
+                    <a href="/view_users">Control Panel</a>
+                </li>
+                {{/if}}
                 <li>
                     <a href="/logout">Logout</a>
                 </li>

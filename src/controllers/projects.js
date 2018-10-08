@@ -10,6 +10,7 @@ const get = (request, response) => {
       response.render('projects', {
         allprojects: getAllProjectsResults.rows,
         coordinationstatus: getCoordinationStatusResults.rows,
+        isadmin: request.admin,
         css: 'css/projects.css',
         js: 'js/fetch.js',
         css2: 'css/modal.css',
