@@ -42,7 +42,7 @@ const projectAdd = (object, cb) => {
   db_connection.query(sql, (inserterr, res) => {
     if (inserterr) {
       cb(inserterr);
-       } else {
+    } else {
       cb(null, res.rows);
     }
   });

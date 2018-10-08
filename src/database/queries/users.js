@@ -59,6 +59,7 @@ const deleteUser = (userName) => {
   return dbConnection.query(sql);
 };
 
+
 module.exports = {
   addUser,
   checkUser,

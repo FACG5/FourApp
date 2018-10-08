@@ -1,23 +1,38 @@
 <section>
-  <form class="" action="/add_user" method="post">
-    <label>name <input type="text" name="name" value="" required>
-    </label>
-    <label>Username <input type="text" name="username" value="" required>
-    </label>
-    <label>Email <input type="email" name="email" value="" required>
-    </label>
-    <label>password <input type="password" name="password" value="" required>
-    </label>
-    <label>Confirm password <input type="password" name="confPass" value="" required>
-    </label>
-    <label>Mobile Number <input type="number" name="mobile" value="" required>
-    </label>
-    <label>ID Number <input type="number" name="idNumber" value="" required>
-    </label>
-    <label>Job title <input type="text" name="jobTitle" value="" required>
-    </label>
-    <input type="checkbox"  name="role" value='admin' >Admin
-    <input type="submit" name="" value="Add User">
+  <h1 class="page-title">Add user</h1>
+  <form class="adduser" action="/add_user" method="post">
+    <div class="bigdiv">
+    <div class="item">
+      <label>Name</label> <input type="text" name="name" value="" required>
+    </div>
+    <div class="item">
+      <label>Username</label> <input type="text" name="username" value="" required>
+    </div>
+    <div class="item">
+      <label>Email</label> <input type="email" name="email" value="" required>
+    </div>
+    <div class="item">
+      <label>password</label><input type="password" name="password" value="" required>
+    </div>
+    <div class="item">
+      <label>Confirm password</label> <input type="password" name="confPass" value="" required>
+    </div>
+    <div class="item">
+      <label>Mobile Number</label> <input type="number" name="mobile" value="" required>
+    </div>
+    <div class="item">
+      <label>ID Number</label> <input type="number" name="idNumber" value="" required>
+    </div>
+    <div class="item">
+      <label>Job title</label> <input type="text" name="jobTitle" value="" required>
+    </div>
+    <div class="checkAdmin">
+     Admin<input  type="checkbox"  name="role" value="admin" >
+    </div>
+    <div  id="addButton">
+    <input class="addButton" type="submit" name="" value="Add User">
+    </div>
+        </div>
   </form>
   <p> {{message}} </p>
 </section>

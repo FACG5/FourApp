@@ -1,0 +1,47 @@
+.adduser{
+margin: 0 auto;
+width: 80%;
+}
+.page-title{
+    font-size: 24pt;
+    color:#294552;
+    margin:20px 0 20px;
+    font-weight:600;
+}
+
+.bigdiv{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-gap:2%;
+}
+.item{
+    display: grid;
+    grid-template-columns: 20% 50%;
+    grid-gap: 10%;
+    margin-bottom: 5px;
+    height: 30px;
+}
+.item > input {
+    background-color: #9EB9B3;
+}
+.checkAdmin{
+  padding-top: 20px;
+  display: flex;
+  padding-left: 80px;
+  justify-content: center;
+}
+#addButton{
+  padding-top: 20px;
+  display: flex;
+  padding-left: 80px;
+  justify-content: center;
+}
+.addButton{
+  text-align: center;
+    margin:10px;
+    width:150px;
+    background-color: #294552;
+    color:white;
+    height: 35px;
+    font-weight: 600;
+}

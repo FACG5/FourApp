@@ -7,20 +7,26 @@ const {
   deleteUser,
   checkMobile,
 } = require('../database/queries/users');
-const hashPassword = require('./hash_password');
+const hashPassword = require('../authentication/hashpassword');
 
 exports.userIndex = (req, res) => {
-  viewUsers().then((result) => {
-    const userDetails = result.rows;
-    res.render('view_users', {
-      userDetails,
-      auth: 'authorization',
-      func: 'helpers',
-      isadmin: req.admin,
+  const admin = req.admin;
+  if (admin) {
+    viewUsers().then((result) => {
+      const userDetails = result.rows;
+      res.render('view_users', {
+        addUserSuccessMsg: req.flash('addUserSuccessMsg'),
+        userDetails,
+        auth: 'authorization',
+        func: 'helpers',
+        css: 'css/view_users.css',
+      });
+    }).catch((err) => {
+      next(err);
     });
-  }).catch((err) => {
-    next(err);
-  });
+  } else {
+    res.redirect('/');
+  }
 };
 
 exports.authorization = (req, res, next) => {
@@ -45,7 +51,11 @@ exports.authorization = (req, res, next) => {
 };
 
 exports.get = (req, res) => {
-  res.render('add_user');
+  if (req.admin) {
+    res.render('add_user', { css: 'css/add_user.css' });
+  } else {
+    res.redirect('/');
+  }
 };
 
 exports.post = (request, response, next) => {
@@ -63,7 +73,7 @@ exports.post = (request, response, next) => {
     role,
   } = data;
   (role !== 'admin') ? role = 'user' : role = 'admin';
-  if (name && username && email && password && idNumber && mobile && jobTitle) {
+  if (name && username && email && password && idNumber && mobile && jobTitle && role) {
     hashPassword(password, (err, hash) => {
       if (err) {
         next(err);
@@ -76,9 +86,8 @@ exports.post = (request, response, next) => {
                   if (!mobileResult.rows[0]) {
                     addUser(data, hash, role)
                       .then(() => {
-                        response.render('add_user', {
-                          message: 'User has been added successsfully',
-                        });
+                        request.flash('addUserSuccessMsg', 'User Added successfully!');
+                        response.redirect('/view_users');
                       }).catch((err) => {
                         next(err);
                       });
