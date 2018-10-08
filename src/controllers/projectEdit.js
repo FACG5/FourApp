@@ -7,18 +7,17 @@ exports.get = (req, res) => {
     if (err) {
       res.render(err);
     } else {
-      res.render('projectEdit', { response, css: '/css/projectEdit.css' });
+      res.render('projectEdit', { response, css: '/css/projectEdit.css', isadmin: req.admin });
     }
   });
 };
-
 exports.post = (request, response) => {
   const data = request.body;
   projectEdit(data, (err, result) => {
     if (err) {
       response.render('projectEdit');
     } else {
-      response.redirect('/projectDetails/'+ data.id);
+      response.redirect('/');
     }
   });
 };

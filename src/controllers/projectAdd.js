@@ -9,6 +9,7 @@ exports.get = (req, res) => {
         crStatus,
         prStatus,
         css: 'css/projectAdd.css',
+        isadmin: req.admin,
       });
     }).catch();
   }).catch();

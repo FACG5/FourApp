@@ -25,8 +25,6 @@ function renderFitchedProjects(projects) {
         const tr = document.createElement('tr');
         tr.dataset.id = elem.id;
 
-        // add id to tr
-
         const refnotd = document.createElement('td');
         refnotd.textContent = elem.cla_ref;
         tr.appendChild(refnotd);
@@ -40,7 +38,7 @@ function renderFitchedProjects(projects) {
         tr.appendChild(sectortd);
 
         const approvalstatustd = document.createElement('td');
-        approvalstatustd.textContent = elem.coordination_status_id;
+        approvalstatustd.textContent = elem.coordinationstatus;
         tr.appendChild(approvalstatustd);
 
         const locationtd = document.createElement('td');
@@ -56,7 +54,7 @@ function renderFitchedProjects(projects) {
            + `<a href="/projectedit/${elem.id}"><img src="images/writing.png" alt="" /></a>`
            + `<a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>`;
         buttonstd.lastChild.onclick = (e) => {
-          modalconfirmdelete.setAttribute('href', `/deleteproject/${e.target.parentElement().parentElement().dataset.id}`);
+          modalconfirmdelete.setAttribute('href', `/deleteproject/${e.currentTarget.parentElement.parentElement.dataset.id}`);
           modal.style.display = 'block';
         };
         tr.appendChild(buttonstd);

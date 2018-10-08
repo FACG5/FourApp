@@ -4,25 +4,338 @@
 <head>
     <meta charset="utf-8">
     <title>FOUR</title>
+    <link rel="stylesheet" href="/css/modal.css">
     <link rel="stylesheet" href="{{css}}">
     <link rel="stylesheet" href="{{css2}}">
     <link rel="stylesheet" href="{{css3}}">
     <link rel="stylesheet" href="{{css4}}">
+    <style>
+ 
+
+       html,
+        body,
+        div,
+        span,
+        applet,
+        object,
+        iframe,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p,
+        blockquote,
+        pre,
+        a,
+        abbr,
+        acronym,
+        address,
+        big,
+        cite,
+        code,
+        del,
+        dfn,
+        em,
+        img,
+        ins,
+        kbd,
+        q,
+        s,
+        samp,
+        small,
+        strike,
+        strong,
+        sub,
+        sup,
+        tt,
+        var,
+        b,
+        u,
+        i,
+        center,
+        dl,
+        dt,
+        dd,
+        ol,
+        ul,
+        li,
+        fieldset,
+        form,
+        label,
+        legend,
+        table,
+        caption,
+        tbody,
+        tfoot,
+        thead,
+        tr,
+        th,
+        td,
+        article,
+        aside,
+        canvas,
+        details,
+        embed,
+        figure,
+        figcaption,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        output,
+        ruby,
+        section,
+        summary,
+        time,
+        mark,
+        audio,
+        video {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font: inherit;
+            vertical-align: baseline;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+        }
+
+        /* HTML5 display-role reset for older browsers */
+
+        article,
+        aside,
+        details,
+        figcaption,
+        figure,
+        footer,
+        header,
+        hgroup,
+        menu,
+        nav,
+        section {
+            display: block;
+        }
+
+        body {
+            line-height: 1;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        blockquote,
+        q {
+            quotes: none;
+        }
+
+        blockquote:before,
+        blockquote:after,
+        q:before,
+        q:after {
+            content: '';
+            content: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0;
+
+        }
+
+
+
+
+
+        .mybody {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+
+        }
+
+
+        header {
+            height: 6%;
+            background-color: #294552;
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+
+        }
+
+        header img {
+            margin-left: 20px;
+            height: 30px;
+        }
+
+        header li a {
+
+            color: white;
+            text-decoration: none;
+        }
+
+        header li a:hover {
+            color: #ACC4CE;
+        }
+
+
+        header ul {
+            margin-right: 20px;
+            display: flex;
+
+        }
+
+        header>ul>li {
+            margin-right: 20px;
+            margin-top: 5px;
+        }
+
+        .header-item {
+            height: 30px;
+            align-self: center;
+        }
+
+        .container {
+            height: 88%;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 0 20px;
+            overflow: auto;
+        }
+
+        footer {
+
+            height: 6%;
+            background-color: #294552;
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            color: white;
+
+        }
+
+        footer div {
+            align-self: center;
+        }
+
+    .page-title{
+    font-size: 24pt;
+    color:#294552;
+    margin:50px 0 20px;
+    font-weight:600;
+    }
+    
+    </style>
 </head>
 
 <body>
-{{{body}}}
+
+    <div class="mybody">
+        <header>
+            <div class="header-item">
+                <a href="#">
+                    <img src="/images/Four_New_Zealand_logo2.png" />
+                </a>
+            </div>
+            <ul class="header-item">
+                {{#if isadmin}}
+                <li>
+                    <a href="/view_users">Control Panel</a>
+                </li>
+                {{/if}}
+                <li>
+                    <a href="/logout">Logout</a>
+                </li>
+            </ul>
+        </header>
+
+        <div class="container">
+            {{{body}}}
+        </div>
+
+        <footer>
+            <div>
+                <h1>All Rights Reserved To ACMTeam</h1>
+            </div>
+        </footer>
+
+    </div>
+
+
+    <div id="myModal" class="modal">
+
+        <div class="modal-content">
+            <div class="modal-header">
+
+                <h2>Deletion Confirmation</h2>
+
+                <div>
+                    <span class="close">&times;</span>
+                </div>
+
+            </div>
+            <div class="modal-body">
+
+                <p>
+                    <strong>This Project Will Be Deleted Permenantly.</strong>
+                </p>
+                <p> Are you sure you want to proceed?</p>
+            </div>
+            <div class="modal-footer">
+                <a href="" class="modalbtn confirmdelete">OK</a>
+                <a class="modalbtn canceldelete">Cancel</a>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        document.addEventListener("click", handleClick, false);
+        function handleClick(event) {
+            event = event || window.event;
+            event.target = event.target || event.srcElement;
+            var element = event.target;
+            // Climb up the document tree from the target of the event
+            while (element) {
+                if (element.nodeName === "A" && /deletebtn/.test(element.className)) {
+                    modalconfirmdelete.setAttribute('href', `/deleteproject/${element.parentElement.parentElement.dataset.id}`);
+                    modal.style.display = "block";
+                    break;
+                }
+                element = element.parentNode;
+            }
+        }
+
+    </script>
+
+
 
     <script src="{{js}}"></script>
     <script src="{{js2}}"></script>
     <script src="{{js3}}"></script>
     <script src="{{js4}}"></script>
+    <script src="/js/modal.js"></script>  
     {{#if func}}
-    <script src="/js/{{func}}.js"></script>
-    {{/if}}
+    <script src="/js/{{func}}.js"></script> {{/if}} 
     {{#if auth}}
-    <script src="/js/{{auth}}.js"></script>
-    {{/if}}
+    <script src="/js/{{auth}}.js"></script> {{/if}}
 </body>
 
 

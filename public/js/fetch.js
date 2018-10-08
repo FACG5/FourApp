@@ -19,5 +19,6 @@ const request = (method, url, data, cb) => {
     }
   };
   xhr.open(method, url, true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
   xhr.send(JSON.stringify(data));
 };

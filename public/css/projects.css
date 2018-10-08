@@ -1,135 +1,11 @@
 
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video
-
- {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-
-html,body{
-        height:100%;
-    width:100%;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-
-}
-
-.mybody{
-    display:flex;
-    height:100%;
-    width:100%;
-    flex-direction:column;
-    justify-content:space-between;
-    padding: 0;
-    margin:0;
-    box-sizing: border-box;
-
-}
-
-
-header{
-    height:6%;
-    background-color:#294552;
-    display:flex;
-    justify-content:space-between;
-    align-content:center;
-  
-}
-
-header img{
-    margin-left:20px;
-    height: 30px;
-}
-
-header li a{
-
-    color: white;
-    text-decoration:none;
-}
-
-header li a:hover{
-    color: #ACC4CE;
-}
-
-
-header ul{
-    margin-right:20px;
-    display:flex;
-
-}
-
-header>ul>li{
-    margin-right: 20px;
-    margin-top:5px;
-}
-
-.header-item{
-    height:30px;
-    align-self:center;
-}
-/*end of headr css*/
-
-.page-title{
-    font-size: 24pt;
-    color:#294552;
-    margin:20px 0 20px;
-    font-weight:600;
-}
-
-.container{
-    height:88%;
-    margin: 0 auto;
-    width:100%;
-    box-sizing:border-box;
-    padding:0 20px;
-}
-
 
 .projectstable{
     height:75%;
 }
 
 .projecttablebody{
-    height:95%;
+    height:90%;
     overflow:auto;
 }
 
@@ -216,19 +92,17 @@ tbody>tr>td>a>img{
 }
 
 
-footer{
-
+/* footer{
     height:6%;
     background-color:#294552;
     display:flex;
     justify-content:center;
     align-content:center;
     color:white;
-
 }
 footer div{
     align-self:center;
-}
+} */
 
 
         .meter { 
@@ -264,7 +138,7 @@ footer div{
 
         .searchbox{
             display:flex;
-            width:70%;
+            width:78%;
             height:50px;
             background-color:#E5F0F5;
             margin-bottom:10px;
@@ -278,12 +152,23 @@ footer div{
             border-color:#E5F0F5;
             margin-right:15px;
         }
-        #refnotxt, #locationtxt, #sectortxt{
+        #refnotxt{
             height: 25px;
-            width:12%;
+            width:10%;
             border-color:#E5F0F5;
             margin-right:15px;
         }
+        #locationtxt, #sectortxt{
+            height: 25px;
+            width:16%;
+            border-color:#E5F0F5;
+            margin-right:15px;
+        }
+
+        .searchbox input{
+            padding:2px 5px;
+        }
+
         .control input::placeholder{
             color: #ACC4CE;
         }
@@ -293,7 +178,7 @@ footer div{
             border-color:#E5F0F5;
             margin-right:15px;
             background-color:white;
-            color:#ACC4CE;
+            color:#294552;
         }
 
         .control{
@@ -314,6 +199,10 @@ footer div{
             background-color:#294552;
             color:white;
         }
+        
+        #newprojectbtn{
+            margin-right: 0;
+        }
         #printbtn{
             margin-left: auto;
         }
@@ -327,4 +216,3 @@ footer div{
         .breadcrumbs > ul >li>a{
             color:#ACC4CE;
         }
-
