@@ -7,6 +7,7 @@ const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const router = require('./controllers');
 const helpers = require('./views/helpers/index');
+const { authCheck } = require('./authentication/authentication');
 
 const app = express();
 app.set('port', process.env.PORT || 4000);
@@ -21,6 +22,25 @@ app.use(session({
 }));
 
 app.use(flash());
+app.use((req, res, next) => {
+  authCheck(req, (authErr, token) => {
+    if (authErr) {
+      req.token = null;
+      req.userauthed = false;
+      next();
+    } else {
+      req.token = token;
+      req.userauthed = true;
+      if (token.role === 'admin') {
+        req.admin = true;
+      } else {
+        req.admin = false;
+      }
+      next();
+    }
+  });
+});
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.disable('x-powered-by');

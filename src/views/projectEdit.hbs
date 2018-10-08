@@ -1,6 +1,9 @@
+
+<div class="editContainer">
 {{#each response}}
-<form class="editContainer" id="project_form" action="/projectEdit/{{id}}" method="POST">
-    <h3 class="editTitle">Edit Project</h3>
+<h1 class="page-title">Project Edit: ({{cla_ref}})</h1>
+<form  id="project_form" action="/projectEdit" method="POST">
+    <h3 class="editTitle">General</h3>
     <div class="editbox">
             <input type="hidden" value="{{id}}" name="id">
         <div class="editItem">
@@ -152,6 +155,7 @@
     </div>
     <div class="editButtons">
         <button class="editButton" name="projectedit" value="submit" type="submit"> SUBMIT </button>
+        <a class="editButton" href="/"> Back </a>
     </div>
 </form>
 {{/each}}

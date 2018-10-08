@@ -10,18 +10,23 @@ const {
 const hashPassword = require('../authentication/hashpassword');
 
 exports.userIndex = (req, res) => {
-  viewUsers().then((result) => {
-    const userDetails = result.rows;
-    res.render('view_users', {
-      addUserSuccessMsg: req.flash('addUserSuccessMsg'),
-      userDetails,
-      auth: 'authorization',
-      func: 'helpers',
-      css: 'css/view_users.css'
+  const admin = req.admin;
+  if (admin) {
+    viewUsers().then((result) => {
+      const userDetails = result.rows;
+      res.render('view_users', {
+        addUserSuccessMsg: req.flash('addUserSuccessMsg'),
+        userDetails,
+        auth: 'authorization',
+        func: 'helpers',
+        css: 'css/view_users.css',
+      });
+    }).catch((err) => {
+      next(err);
     });
-  }).catch((err) => {
-    next(err);
-  });
+  } else {
+    res.redirect('/');
+  }
 };
 
 exports.authorization = (req, res, next) => {
@@ -46,7 +51,11 @@ exports.authorization = (req, res, next) => {
 };
 
 exports.get = (req, res) => {
-  res.render('add_user',{ css:'css/add_user.css'});
+  if (req.admin) {
+    res.render('add_user', { css: 'css/add_user.css' });
+  } else {
+    res.redirect('/');
+  }
 };
 
 exports.post = (request, response, next) => {

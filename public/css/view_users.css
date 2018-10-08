@@ -6,6 +6,15 @@
     margin:20px 0 20px;
     font-weight:600;
 }
+.addButton{
+  text-align: center;
+    margin:2px;
+    width:150px;
+    background-color: #294552;
+    color:white;
+    height: 35px;
+    font-weight: 600;
+}
 
 table{
   border-collapse:collapse;

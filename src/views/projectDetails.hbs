@@ -1,12 +1,10 @@
 {{#each response}}
 
 <div class="DetailsContainer">
-
-    <h3 class="DetailsTitle">Project Details</h3>
+<h1 class="page-title">Project Details: ({{cla_ref}})</h1> 
+    <h3 class="DetailsTitle">General</h3>
     <div class="detailsBox">
         <div class="detailsItem">
-
-
             <p>Serial Number</p>
             <p>{{sn}}</p>
         </div>
@@ -146,7 +144,8 @@
         </div>
     </div>
     <div class="detailsButtons">
-        <button class="detailsButton" name="printDetails" value="submit" type="submit">PRINT</button>
+        <a class="detailsButton" href="#">PRINT</a>
+        <a class="detailsButton" href="/">Back</a>
     </div>
 </div>
 {{/each}}

@@ -3,11 +3,19 @@ const checkUser = require('../database/queries/checkUser');
 const { createCookie } = require('../authentication/authentication');
 
 exports.get = (request, response) => {
-  response.render('login', { js: 'js/login.js', css: 'css/login.css' });
+  response.render('login', {
+    js: 'js/login.js',
+    css: 'css/login.css',
+    isadmin: request.admin,
+  });
+};
+
+exports.logOut = (request, response) => {
+  response.clearCookie('data');
+  response.redirect('/login');
 };
 
 exports.post = (request, response) => {
-  console.log(request.body);
   const { pass, username } = request.body;
   checkUser(username).then((result) => {
     if (result.length === 0) {

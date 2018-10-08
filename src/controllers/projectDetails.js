@@ -9,7 +9,9 @@ exports.get = (req, res) => {
       res.render(err);
     } else {
       res.render('projectDetails', {
-        response, css: '/css/projectDetails.css',
+        response,
+        css: '/css/projectDetails.css',
+        isadmin: req.admin,
       });
     }
   });

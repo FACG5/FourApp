@@ -1,26 +1,29 @@
-body{
-    margin: 2% 15%;
-}
+
 .editContainer{
     display:grid;
+    width:100%;
+    margin:0;
+    box-sizing: border-box;
 }
 
 .editbox{
     display: grid;
     grid-template-columns: 100%;
     grid-gap:2%;
+    padding: 20px;
 }
 
 .editItem{
     display: grid;
-    grid-template-columns: 40% 60%;
-    grid-gap: .5%;
+    grid-template-columns: 30% 70%;
     margin-bottom: 5px;
     height: 30px;
+    width:100%;
+    box-sizing: border-box;
 }
 
 .editItem > input {
-    background-color: #9EB9B3;
+    background-color: #ACC4CE;
 }
 
 .editTitle{
@@ -28,7 +31,6 @@ body{
     height: 30px;
     padding: 15px 0 0px 20px;
     color: #D4C5C5;
-
 }
 
 .editButtons{
@@ -44,4 +46,11 @@ body{
     color:white;
     height: 35px;
     font-weight: 600;
+}
+
+a.editButton{
+display: flex;
+justify-content: center;
+align-items: center;
+text-decoration: none;
 }
