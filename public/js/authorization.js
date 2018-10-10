@@ -31,7 +31,7 @@ const deleteRow = (userName) => {
     }).then(response => response.json()).then((response) => {
       window.location = '/view_users';
       const { message } = response;
-      alert(message);
+      alert(message)
     }).catch(error => alert('ERROR !', error));
   }).catch(() => { alert('delete cancel'); });
 };

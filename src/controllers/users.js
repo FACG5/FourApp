@@ -6,6 +6,7 @@ const {
   updateRole,
   deleteUser,
   checkMobile,
+  checkEmail,
 } = require('../database/queries/users');
 const hashPassword = require('../authentication/hashpassword');
 
@@ -69,10 +70,7 @@ exports.post = (request, response, next) => {
     mobile,
     jobTitle,
   } = data;
-  let {
-    role,
-  } = data;
-  (role !== 'admin') ? role = 'user' : role = 'admin';
+  const { role } = data;
   if (name && username && email && password && idNumber && mobile && jobTitle && role) {
     hashPassword(password, (err, hash) => {
       if (err) {
@@ -84,16 +82,28 @@ exports.post = (request, response, next) => {
               if (!result.rows[0]) {
                 checkMobile(mobile).then((mobileResult) => {
                   if (!mobileResult.rows[0]) {
-                    addUser(data, hash, role)
-                      .then(() => {
-                        request.flash('addUserSuccessMsg', 'User Added successfully!');
-                        response.redirect('/view_users');
-                      }).catch((err) => {
-                        next(err);
-                      });
+                    checkEmail(email).then((emailResult) => {
+                      if (!emailResult.rows[0]) {
+                        addUser(data, hash, role)
+                          .then(() => {
+                            request.flash('addUserSuccessMsg', 'User Added successfully!');
+                            response.redirect('/view_users');
+                          }).catch((err) => {
+                            next(err);
+                          });
+                      } else {
+                        response.render('add_user', {
+                          message: 'Email is already exist',
+                          css: 'css/add_user.css',
+                        });
+                      }
+                    }).catch((err) => {
+                      next(err);
+                    });
                   } else {
                     response.render('add_user', {
                       message: 'Mobile Number is already exist',
+                      css: 'css/add_user.css',
                     });
                   }
                 }).catch((err) => {
@@ -102,6 +112,7 @@ exports.post = (request, response, next) => {
               } else {
                 response.render('add_user', {
                   message: 'ID Number is already exist',
+                  css: 'css/add_user.css',
                 });
               }
             }).catch((err) => {
@@ -110,6 +121,7 @@ exports.post = (request, response, next) => {
           } else {
             response.render('add_user', {
               message: 'Username is already exist',
+              css: 'css/add_user.css',
             });
           }
         }).catch((err) => {
@@ -120,6 +132,7 @@ exports.post = (request, response, next) => {
   } else {
     response.render('add_user', {
       message: 'Some thing wrong with the data please try again',
+      css: 'css/add_user.css',
     });
   }
 };
