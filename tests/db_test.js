@@ -23,7 +23,7 @@ tape('Check username Not Found', (t) => {
   });
 });
 
-tape('Check username found Found', (t) => {
+tape('Check username found in database', (t) => {
   db_build((error, response) => {
     checkUser('melkhoudary').then((res) => {
       t.equal(res.rowCount, 1, 'test should return 1');
@@ -258,7 +258,7 @@ tape('Check checkId query with user not found', (t) => {
   tape('Check projectAdd Query when add cla_ref name found in data base', (t) => {
     db_build((error, response) => {
       data ={
-        sn:6,
+        sn:50,
         cla_ref:'GP-10075',
         project_no:152,
         project_name: 'Gaza Water',
@@ -313,7 +313,7 @@ tape('Check checkId query with user not found', (t) => {
   tape('Check projectAdd Query when add cla_ref name found in data base', (t) => {
     db_build((error, response) => {
       data ={
-        sn:6,
+        sn:50,
         cla_ref:'GP-10075',
         project_no:152,
         project_name: 'Gaza Water',
