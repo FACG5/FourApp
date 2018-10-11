@@ -12,10 +12,13 @@ const checkRole = (checked, userName) => {
         body: JSON.stringify(data),
       }).then(response => response.json()).then((response) => {
         const { message } = response;
-        alert(message);
-      }).catch(error => alert('ERROR !', error));
+        const msgDiv = document.getElementById('msgDiv');
+        const msg = document.getElementById('msg');
+        msgDiv.style.display = 'flex';
+        msg.textContent = message;
+      }).catch(error => alert(error));
     }).catch(() => { alert('You cancel changes'); });
-  }).catch(() => { alert('ERROR !'); });
+  }).catch(error => alert(error));
 };
 
 const deleteRow = (userName) => {
@@ -29,9 +32,11 @@ const deleteRow = (userName) => {
       },
       body: JSON.stringify(data),
     }).then(response => response.json()).then((response) => {
-      window.location = '/view_users';
       const { message } = response;
-      alert(message)
+      const msgDiv = document.getElementById('msgDiv');
+      const msg = document.getElementById('msg');
+      msgDiv.style.display = 'flex';
+      msg.textContent = message;
     }).catch(error => alert('ERROR !', error));
   }).catch(() => { alert('delete cancel'); });
 };
