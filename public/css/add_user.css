@@ -1,3 +1,19 @@
+.validation{
+      display: flex;
+      justify-content: space-between;
+      height: 30px;
+      width: 95%;
+			color: #D63301;
+			background-color: #FFCCBA;
+      margin-bottom: 30px;
+      align-items: center;
+      padding: 10px 20px;
+		}
+
+    .validation img{
+      height: 10px;
+    }
+
 .adduser{
 margin: 0 auto;
 width: 80%;
@@ -24,12 +40,7 @@ width: 80%;
 .item > input {
     background-color: #9EB9B3;
 }
-.checkAdmin{
-  padding-top: 20px;
-  display: flex;
-  padding-left: 80px;
-  justify-content: center;
-}
+
 #addButton{
   padding-top: 20px;
   display: flex;

@@ -25,6 +25,13 @@ const checkUser = (username) => {
   };
   return dbConnection.query(sql);
 };
+const checkEmail = (email) => {
+  const sql = {
+    text: 'SELECT email FROM users WHERE email=$1',
+    values: [email],
+  };
+  return dbConnection.query(sql);
+};
 
 const checkId = (idNumber) => {
   const sql = {
@@ -67,5 +74,6 @@ module.exports = {
   viewUsers,
   updateRole,
   deleteUser,
-  checkMobile
+  checkMobile,
+  checkEmail
 };

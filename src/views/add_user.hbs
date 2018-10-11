@@ -1,5 +1,12 @@
 <section>
   <h1 class="page-title">Add user</h1>
+{{#if message}}
+  <div class="validation">
+    <p> {{message}} </p>
+    <img src="/images/delete.png" onclick="this.parentElement.style.display = 'none'" alt="">
+  </div>
+{{/if}}
+
   <form class="adduser" action="/add_user" method="post">
     <div class="bigdiv">
     <div class="item">
@@ -26,13 +33,17 @@
     <div class="item">
       <label>Job title</label> <input type="text" name="jobTitle" value="" required>
     </div>
-    <div class="checkAdmin">
-     Admin<input  type="checkbox"  name="role" value="admin" >
+    <div class="item">
+     Role
+     <select class="" name="role">
+       <option value="admin">Admin</option>
+       <option value="user" selected>User</option>
+     </select>
     </div>
     <div  id="addButton">
     <input class="addButton" type="submit" name="" value="Add User">
     </div>
         </div>
   </form>
-  <p> {{message}} </p>
+
 </section>

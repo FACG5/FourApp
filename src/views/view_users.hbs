@@ -1,7 +1,15 @@
 <section>
   {{#if addUserSuccessMsg}}
-  <p >{{addUserSuccessMsg}}</p>
+  <div class="success">
+    <p >{{addUserSuccessMsg}}</p>
+    <img src="/images/delete.png" onclick="this.parentElement.style.display = 'none'" alt="">
+  </div>
   {{/if}}
+
+  <div id="msgDiv" class="success" style="display:none">
+    <p id="msg"></p>
+    <img src="/images/delete.png" onclick="this.parentElement.style.display = 'none'; window.location = '/view_users'" alt="">
+  </div>
 
   <h1 class="page-title">Users list</h1>
 <a href="/add_user"><input class="addButton" id="addButton"type="submit" href="/add_user" value="New user"></a>
@@ -10,7 +18,7 @@
       <tr>
         <td>User Name</td>
         <td>Name</td>
-        <td>ID Name</td>
+        <td>ID Number </td>
         <td>Mobile Number</td>
         <td>Email</td>
         <td>Admin</td>
