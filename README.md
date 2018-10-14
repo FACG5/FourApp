@@ -5,7 +5,8 @@
  
 Access Cordination Monitoring Team (ACM) in UNDP has no efficient and automated system to monitor and track the status of their projects. 
 
-### Solution 
+### Our Solution 
+Building a website that enable the employee to track project status and provide him two main advantages centralized data and easy access.
 
  ### user stories
  **AS AN ADMIN**
