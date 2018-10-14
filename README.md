@@ -1,7 +1,12 @@
 # FourApp
 
  ---------------------------
+ ### Problem Statement
  
+Access Cordination Monitoring Team (ACM) in UNDP has no efficient and automated system to monitor and track the status of their projects. 
+
+### Solution 
+
  ### user stories
  **AS AN ADMIN**
 
