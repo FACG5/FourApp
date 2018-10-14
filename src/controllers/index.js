@@ -25,6 +25,7 @@ router.post('/view_users', authorize, user.authorization);
 router.post('/getprojects', authorize, projects.getprojects);
 router.get('/deleteproject/:id', authorize, projects.deleteProject);
 router.get('/logout', login.logOut);
+router.get('/projects/print/:id', projects.report);
 
 router.use(error.client);
 router.use(error.server);

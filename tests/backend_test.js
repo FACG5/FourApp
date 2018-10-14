@@ -13,7 +13,7 @@ test('setup', (t) => {
 test('home route which displays projects "GET"', (t) => {
   supertest(app).get('/')
     .expect(200)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'text/html; charset=utf-8')
     .end((err, res) => {
       if (err) t.error(err);
@@ -108,7 +108,7 @@ test('login route which  with post method "POST" ', (t) => {
 test('add user route which displays user add page just for the admin "GET" ', (t) => {
   supertest(app).get('/add_user')
     .expect(200)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'text/html; charset=utf-8')
     .end((err, res) => {
       if (err) t.error(err);
@@ -137,7 +137,7 @@ test('add user route which displays user add page just for the admin "GET" ', (t
 test('add user route which add new user to the database "POST" ', (t) => {
   supertest(app).post('/add_user')
     .expect(200)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'text/html; charset=utf-8')
     .end((err, res) => {
       if (err) t.error(err);
@@ -166,7 +166,7 @@ test('add user route which add new user to the database "POST" ', (t) => {
 test('view_users  route which display  users  "GET"', (t) => {
   supertest(app).get('/view_users')
     .expect(200)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'text/html; charset=utf-8')
     .end((err, res) => {
       if (err) t.error(err);
@@ -193,7 +193,7 @@ test('view_users  route when the user press role chane checkbox  "POST"', (t) =>
   supertest(app).post('/view_users')
     .send({ process: 0 })
     .expect(200)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'application/json; charset=utf-8')
     .end((err, res) => {
       if (err) t.error(err);
@@ -214,7 +214,7 @@ test('view_users  route when the user press delete icone  "POST"', (t) => {
   supertest(app).post('/view_users')
     .send({ process: 1 })
     .expect(200)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'application/json; charset=utf-8')
     .end((err, res) => {
       if (err) t.error(err);
@@ -234,7 +234,7 @@ test('view_users  route when the user press delete icone  "POST"', (t) => {
 test('projectDetails  route which display  projects Details "GET" ', (t) => {
   supertest(app).get('/projectDetails/1')
     .expect(200)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'text/html; charset=utf-8')
     .end((err, res) => {
       if (err) t.error(err);
@@ -259,7 +259,7 @@ test('projectDetails  route which display  projects Details "GET" ', (t) => {
 test('projectedit  route which display  projects Details to change feilds "GET" ', (t) => {
   supertest(app).get('/projectedit/1')
     .expect(200)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'text/html; charset=utf-8')
     .end((err, res) => {
       if (err) t.error(err);
@@ -285,7 +285,7 @@ test('projectedit  route which display  projects Details to change feilds "GET" 
 test('projectedit  route which post  edits to database "POST" ', (t) => {
   supertest(app).post('/projectedit')
     .expect(302)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'text/plain; charset=utf-8')
     .end((err, res) => {
       if (err) t.error(err);
@@ -305,9 +305,11 @@ test('projectedit  route which post  edits to database "POST" ', (t) => {
 test('getprojects route which get  projects based into the filter with no data "POST"', (t) => {
   supertest(app).post('/getprojects')
     .expect(200)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'application/json; charset=utf-8')
     .end((err, res) => {
+      console.log(res.text);
+      
       if (err) t.error(err);
       t.equal(res.res.socket._httpMessage._headerSent, true, 'the page should have  \'header sent \'');
       t.equal(res.res.socket._writableState.ended, true, 'the page should have  \'ended writable state\'');
@@ -317,7 +319,7 @@ test('getprojects route which get  projects based into the filter with no data "
       t.equal(res.redirects.length, 0, 'the page should have  \'no redirects \'');
       t.equal(res.request.protocol, 'http:', 'the page should have  \'http protocol \'');
       t.equal(res.headers.connection, 'close', 'the page should have  \'http protocol \'');
-      t.equal(res.text.includes('{"err":{"name":"error","length":110,"severity":"ERROR","code":"42703","position":"302","file":"parse_relation.c","line":"3293","routine":"errorMissingColumn"}}'), true, 'the page should have  \'Return Error\'');
+      t.equal(res.text.includes('{"err"'), true, 'the page should have  \'Return Error\'');
       t.end();
     });
 });
@@ -331,7 +333,7 @@ test('getprojects route which get  projects based into the filter with no data "
       location: '',
     })
     .expect(200)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'application/json; charset=utf-8')
     .end((err, res) => {
       if (err) t.error(err);
@@ -351,7 +353,7 @@ test('getprojects route which get  projects based into the filter with no data "
 test('projectadd  route to add new project to the database "GET" ', (t) => {
   supertest(app).get('/projectadd')
     .expect(200)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'text/html; charset=utf-8')
     .end((err, res) => {
       if (err) t.error(err);
@@ -372,7 +374,7 @@ test('projectadd  route to add new project to the database "GET" ', (t) => {
 test('projectadd  route to add new project to the database "POST" ', (t) => {
   supertest(app).post('/projectadd')
     .expect(200)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'text/html; charset=utf-8')
     .end((err, res) => {
       if (err) t.error(err);
@@ -393,7 +395,7 @@ test('projectadd  route to add new project to the database "POST" ', (t) => {
 test('/deleteproject/  route to delete  project row from the database "POST" ', (t) => {
   supertest(app).get('/deleteproject/1')
     .expect(302)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'text/plain; charset=utf-8')
     .end((err, res) => {
       if (err) t.error(err);
@@ -413,7 +415,7 @@ test('/deleteproject/  route to delete  project row from the database "POST" ', 
 test('/logOut/  route to delete  cookie and redirect user to login page "GET" ', (t) => {
   supertest(app).get('/logout')
     .expect(302)
-    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywibmFtZSI6IlNhbHdhIEVsa2hvdWRhcnkiLCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE1MzkwMDUxODh9.b8A0uBSXUH8nJkfi5r25glUB0K7RNjYqxZEZwPaN_AU'])
+    .set('Cookie', ['data=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwibmFtZSI6Ik90aG1hbiBFbGtob3VkYXJ5Iiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNTM5NTE3ODQ1fQ.G-bNvFMCrgyrbfs1rmof8TheeoLoaUd1XdDeZTgiNEM'])
     .expect('content-type', 'text/plain; charset=utf-8')
     .end((err, res) => {
       if (err) t.error(err);

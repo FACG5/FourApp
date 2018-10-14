@@ -1,8 +1,9 @@
-
+const requestapi = require('request');
 const getProjects = require('../database/queries/getProjects');
 const getCoordinationStatus = require('../database/queries/getcoordinationstatus');
 const getAllProjects = require('../database/queries/getallprojects');
 const deleteProjectQuery = require('../database/queries/deleteproject');
+const projectDetails = require('../database/queries/projectDetails');
 
 const get = (request, response) => {
   getCoordinationStatus().then((getCoordinationStatusResults) => {
@@ -36,4 +37,35 @@ const deleteProject = (req, res) => {
   ).catch();
 };
 
-module.exports = { get, getprojects, deleteProject };
+
+const report = (request, response) => {
+  const { id } = request.params;
+  projectDetails(id, (err, projectdata) => {
+    if (err) {
+      response('something went wrong!');
+    } else {
+      const data = {
+        template: { shortid: 'BkuA_Zt9Q' },
+        data: projectdata[0],
+        options: {
+          preview: true,
+        },
+      };
+      const options = {
+        url: 'http://localhost:8005/api/report',
+        method: 'POST',
+        json: data,
+      };
+      requestapi(options)
+        .on('error', (err) => {
+          response.end();
+        })
+        .pipe(response);
+    }
+  });
+};
+
+
+module.exports = {
+  get, getprojects, deleteProject, report,
+};
