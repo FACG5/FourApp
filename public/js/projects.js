@@ -5,6 +5,40 @@ const statusselect = document.getElementById('statusselect');
 const locationtxt = document.getElementById('locationtxt');
 const projectstablebody = document.getElementById('projectstablebody');
 const modalconfirmdelete = document.getElementsByClassName('confirmdelete')[0];
+const printbtn = document.getElementById('printbtn');
+let currentprojects = [];
+
+printbtn.onclick = () => {
+  const wb = XLSX.utils.book_new();
+  wb.Props = {
+    Title: 'SheetJS Tutorial',
+    Subject: 'Test',
+    Author: 'Red Stapler',
+    CreatedDate: new Date(2017, 12, 19),
+  };
+  wb.SheetNames.push('Test Sheet');
+  const ws_data = currentprojects;
+  const ws = XLSX.utils.aoa_to_sheet(ws_data);
+  wb.Sheets['Test Sheet'] = ws;
+  const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
+  function s2ab(s) {
+    const buf = new ArrayBuffer(s.length);
+    const view = new Uint8Array(buf);
+    for (let i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
+    return buf;
+  }
+  saveAs(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), 'test.xlsx');
+};
+
+const constructExcelArray = (results) => {
+  currentprojects = [];
+  results.forEach((elem) => {
+    const elemAsArray = Object.keys(elem).map((key) => {
+      if (key !== 'id') { return elem[key]; } return '';
+    });
+    currentprojects.push(elemAsArray);
+  });
+};
 
 function getFilteredProjects(cb) {
   const filterparams = {
@@ -52,7 +86,7 @@ function renderFitchedProjects(projects) {
         const buttonstd = document.createElement('td');
         buttonstd.innerHTML = `<a href="/projectdetails/${elem.id}"><img src="images/information-signal.png" alt="" /></a>`
            + `<a href="/projectedit/${elem.id}"><img src="images/writing.png" alt="" /></a>`
-           + `<a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>`;
+           + '<a href="#" class="deletebtn"><img src="images/dustbin(1).png" alt="" /></a>';
         buttonstd.lastChild.onclick = (e) => {
           modalconfirmdelete.setAttribute('href', `/deleteproject/${e.currentTarget.parentElement.parentElement.dataset.id}`);
           modal.style.display = 'block';
@@ -66,28 +100,43 @@ function renderFitchedProjects(projects) {
 
 refnotxt.onkeyup = () => {
   getFilteredProjects((error, results) => {
-    if (!error) { renderFitchedProjects(results); }
+    if (!error) {
+      constructExcelArray(results);
+      renderFitchedProjects(results);
+    }
   });
 };
 
 projectnametxt.onkeyup = () => {
   getFilteredProjects((error, results) => {
-    if (!error) { renderFitchedProjects(results); }
+    if (!error) {
+      constructExcelArray(results);
+      renderFitchedProjects(results);
+    }
   });
 };
 sectortxt.onkeyup = () => {
   getFilteredProjects((error, results) => {
-    if (!error) { renderFitchedProjects(results); }
+    if (!error) {
+      constructExcelArray(results);
+      renderFitchedProjects(results);
+    }
   });
 };
 
 statusselect.onchange = () => {
   getFilteredProjects((error, results) => {
-    if (!error) { renderFitchedProjects(results); }
+    if (!error) {
+      constructExcelArray(results);
+      renderFitchedProjects(results);
+    }
   });
 };
 locationtxt.onkeyup = () => {
   getFilteredProjects((error, results) => {
-    if (!error) { renderFitchedProjects(results); }
+    if (!error) {
+      constructExcelArray(results);
+      renderFitchedProjects(results);
+    }
   });
 };
