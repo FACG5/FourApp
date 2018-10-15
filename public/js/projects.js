@@ -7,37 +7,43 @@ const projectstablebody = document.getElementById('projectstablebody');
 const modalconfirmdelete = document.getElementsByClassName('confirmdelete')[0];
 const printbtn = document.getElementById('printbtn');
 let currentprojects = [];
+let currentprojectsobj = {};
+
+let ChosenReportFields = [];
+
 
 printbtn.onclick = () => {
-  const wb = XLSX.utils.book_new();
-  wb.Props = {
-    Title: 'SheetJS Tutorial',
-    Subject: 'Test',
-    Author: 'Red Stapler',
-    CreatedDate: new Date(2017, 12, 19),
-  };
-  wb.SheetNames.push('Test Sheet');
-  const ws_data = currentprojects;
-  const ws = XLSX.utils.aoa_to_sheet(ws_data);
-  wb.Sheets['Test Sheet'] = ws;
-  const wbout = XLSX.write(wb, { bookType: 'xlsx', type: 'binary' });
-  function s2ab(s) {
-    const buf = new ArrayBuffer(s.length);
-    const view = new Uint8Array(buf);
-    for (let i = 0; i < s.length; i++) view[i] = s.charCodeAt(i) & 0xFF;
-    return buf;
-  }
-  saveAs(new Blob([s2ab(wbout)], { type: 'application/octet-stream' }), 'test.xlsx');
+  // console.log(filterResults(currentprojectsobj));
+  modal2.style.display = 'block';
+
+
+};
+
+
+function filterResults (results) {
+  const filteredResults = [];
+  results.forEach((obj) => {
+    const newobj = {};
+    Object.keys(obj).forEach((key) => {
+      if (ChosenReportFields.indexOf(key) !== -1) {
+        newobj[key] = obj[key];
+      }
+    });
+    filteredResults.push(newobj);
+  });
+  return filteredResults;
 };
 
 const constructExcelArray = (results) => {
-  currentprojects = [];
+  // console.log(Object.keys(results[0]));
+  let excelarray = [Object.keys(results[0])];
   results.forEach((elem) => {
     const elemAsArray = Object.keys(elem).map((key) => {
       if (key !== 'id') { return elem[key]; } return '';
     });
-    currentprojects.push(elemAsArray);
+    excelarray.push(elemAsArray);
   });
+  return excelarray;
 };
 
 function getFilteredProjects(cb) {
@@ -101,7 +107,8 @@ function renderFitchedProjects(projects) {
 refnotxt.onkeyup = () => {
   getFilteredProjects((error, results) => {
     if (!error) {
-      constructExcelArray(results);
+      currentprojectsobj = results;
+      // constructExcelArray(results);
       renderFitchedProjects(results);
     }
   });
@@ -110,7 +117,8 @@ refnotxt.onkeyup = () => {
 projectnametxt.onkeyup = () => {
   getFilteredProjects((error, results) => {
     if (!error) {
-      constructExcelArray(results);
+      currentprojectsobj = results;
+      // constructExcelArray(results);
       renderFitchedProjects(results);
     }
   });
@@ -118,7 +126,8 @@ projectnametxt.onkeyup = () => {
 sectortxt.onkeyup = () => {
   getFilteredProjects((error, results) => {
     if (!error) {
-      constructExcelArray(results);
+      currentprojectsobj = results;
+      // constructExcelArray(results);
       renderFitchedProjects(results);
     }
   });
@@ -127,7 +136,8 @@ sectortxt.onkeyup = () => {
 statusselect.onchange = () => {
   getFilteredProjects((error, results) => {
     if (!error) {
-      constructExcelArray(results);
+      currentprojectsobj = results;
+      // constructExcelArray(results);
       renderFitchedProjects(results);
     }
   });
@@ -135,8 +145,20 @@ statusselect.onchange = () => {
 locationtxt.onkeyup = () => {
   getFilteredProjects((error, results) => {
     if (!error) {
-      constructExcelArray(results);
+      currentprojectsobj = results;
+      // constructExcelArray(results);
       renderFitchedProjects(results);
     }
   });
 };
+
+
+window.onload = function () {
+  getFilteredProjects((error, results) => {
+    if (!error) {
+      currentprojectsobj = results;
+      // constructExcelArray(results);
+      renderFitchedProjects(results);
+    }
+  });
+}

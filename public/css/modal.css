@@ -41,6 +41,19 @@
 
 }
 
+
+#myModal2 .modal-header {
+    padding: 2px 16px;
+    background-color: #294552;
+    color: white;
+    height:8%;
+    display:flex;
+    justify-content:space-between;
+    align-content:center;
+
+}
+
+
 .modal-header h2{
     margin-top:10px;
 }
@@ -56,6 +69,23 @@
              text-align:center;
 }
 
+#myModal2 .modal-body {padding: 2px 16px;
+    background:white;
+    height:60%;
+    overflow: auto;
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    flex-direction:column;
+}
+
+#myModal2 .modal-body li{
+    text-align: left;
+    font-size: 18pt;
+    margin-bottom: 5px;
+}
+
+
 .modal-body p {
     margin-bottom:10px;
 }
@@ -66,6 +96,16 @@
     background-color: #294552;
     color: white;
     height:20%;
+    display:flex;
+    justify-content:center;
+    align-content:center;
+}
+
+#myModal2 .modal-footer {
+    padding: 2px 16px;
+    background-color: #294552;
+    color: white;
+    height:8%;
     display:flex;
     justify-content:center;
     align-content:center;
@@ -88,6 +128,23 @@
     justify-content:space-between;
 }
 
+#myModal2 .modal-content {
+    background-color:white;
+    position: relative;
+   margin:200px auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 25%;
+    height:70%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+
 /* Add Animation */
 @keyframes animatetop {
     from {top: -300px; opacity: 0}
@@ -105,6 +162,7 @@
     height: 80%;
     align-self:center;
     color: #294552;
+    cursor: pointer;
 
 }
 
